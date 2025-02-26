@@ -51,5 +51,153 @@
     </div>
     </div>
 
+    <h1 class="text-center mt-10 text-3xl">Unleash Your Potential</h1>
+    <h4 class="text-center text-lg text-red-500">With Us</h4>
+    <div class="flex m-5 pt-2">
+        <div class="flex flex-col text-center m-2">
+            <a href="#" class="justify-center items-center flex flex-col max-w-sm p-6 bg-white border border-red-300 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <img src="{{ asset('storage/images/1.0.png') }}" class="w-[50px] h-[50px]" alt="">
+            <h5 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Build Confidence</h5>
+            <p class="font-normal text-xs text-gray-700 dark:text-gray-400">Here are some tips and activities that can help boost your mood and promote a positive mindset.</p>
+            </a>
+        </div>
+
+        <div class="flex flex-col text-center m-2">
+            <a href="#" class="justify-center items-center flex flex-col max-w-sm p-6 bg-white border border-red-300 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <img src="{{ asset('storage/images/1.1.png') }}" class="w-[50px] h-[50px]" alt="">
+            <h5 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Boost Your Mood</h5>
+            <p class="font-normal text-xs text-gray-700 dark:text-gray-400">Here are some tips and activities that can help boost your mood and promote a positive mindset.</p>
+            </a>
+        </div>
+
+        <div class="flex flex-col text-center m-2">
+            <a href="#" class="justify-center items-center flex flex-col max-w-sm p-6 bg-white border border-red-300 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <img src="{{ asset('storage/images/1.2.png') }}" class="w-[50px] h-[50px]" alt=""> 
+            <h5 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">Increase Energy Levels</h5>
+            <p class="font-normal text-xs text-gray-700 dark:text-gray-400">Here are some tips and activities that can help boost your mood and promote a positive mindset.</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="flex flex-col ml-12 mr-12 p-5">
+        <h3 class="text-center text-sm text-red-500">UNIQUE CATEGORIES</h3>
+        <h1 class="text-center text-2xl mb-8">Browse by Categories</h1>
+        <div class="flex mx-10 mb-5">
+
+                <a href="#" class="block">
+                    <div class="max-w-sm m-1 bg-white border border-red-500 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                        <div class="relative w-full h-48">
+                            <img src="{{ asset('storage/images/2.1.jpg') }}" class="w-full h-full object-cover" alt="">
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <h1 class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm font-bold px-2 py-1 rounded">
+                            Strength Training
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="block">
+                    <div class="max-w-sm m-1 bg-white border border-red-500 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                        <div class="relative w-full h-48">
+                            <img src="{{ asset('storage/images/2.2.jpg') }}" class="w-full h-full object-cover" alt="">
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <h1 class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm font-bold px-2 py-1 rounded">
+                              Functional Fitness
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+                        
+                <a href="#" class="block">
+                    <div class="max-w-sm m-1 bg-white border border-red-500 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                        <div class="relative w-full h-48">
+                            <img src="{{ asset('storage/images/2.3.jpg') }}" class="w-full h-full object-cover" alt="">
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <h1 class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm font-bold px-2 py-1 rounded">
+                                Powerful and Strong
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+
+
+        </div>
+
+
+        <div class="flex mx-10 mt-5">
+
+                <a href="#" class="block">
+                    <div class="max-w-sm m-1 bg-white border border-red-500 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                        <div class="relative w-full h-48">
+                            <img src="{{ asset('storage/images/2.4.jpg') }}" class="w-full h-full object-cover" alt="">
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <h1 class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm font-bold px-2 py-1 rounded">
+                               Online Coaching
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="block">
+                    <div class="max-w-sm m-1 bg-white border border-red-500 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                        <div class="relative w-full h-48">
+                            <img src="{{ asset('storage/images/2.5.jpg') }}" class="w-full h-full object-cover" alt="">
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <h1 class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm font-bold px-2 py-1 rounded">
+                                Core & Flexibility
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+
+
+                <a href="#" class="block">
+                    <div class="max-w-sm m-1 bg-white border border-red-500 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                        <div class="relative w-full h-48">
+                            <img src="{{ asset('storage/images/2.6.jpg') }}" class="w-full h-full object-cover" alt="">
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <h1 class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm font-bold px-2 py-1 rounded">
+                                Mind-Body Balance
+                            </h1>
+                        </div>
+                    </div>
+                </a>
+        </div>
+    </div>
+
+    <div class="m-6">
+        <h2 class="text-center text-sm text-red-500">PRICING PLAN</h2>
+        <h1 class="text-center text-3xl mb-2">MEMBERSHIP PLANS</h1>
+        <h4 class="text-center text-xs">We keep it simple. No catch. Just outrageously prices</h4>
+        <div class="flex justify-center mt-3">
+                
+            <a href="#" class="flex flex-col items-center justify-center m-8 max-w-sm p-6 w-[270px] bg-white border border-red-500 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <img src="{{asset('storage/images/3.1.png')}}" class="w-[50px] h-[50px]" alt="">
+            <h5 class="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white mt-2">Silver Membership</h5>
+            <h6 class="text-center text-xs text-gray-500 mb-3">valid for 1 month</h6>
+            <h1 class="text-center text-3xl font-extrabold mb-3">Rs: 4500.00</h1>
+            </a>
+
+                        
+            <a href="#" class="flex flex-col items-center justify-center m-8 max-w-sm p-6 w-[270px] bg-white border border-red-500 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <img src="{{asset('storage/images/3.0.png')}}" class="w-[50px] h-[50px]" alt="">
+            <h5 class="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white mt-2">Gold Membership</h5>
+            <h6 class="text-center text-xs text-gray-500 mb-3">valid for 6 months</h6>
+            <h1 class="text-center text-3xl font-extrabold mb-3">Rs: 10 000.00</h1>
+            </a>
+
+
+
+            <a href="#" class="flex flex-col items-center justify-center m-8 max-w-sm p-6 w-[270px] bg-white border border-red-500 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <img src="{{asset('storage/images/3.2.png')}}" class="w-[50px] h-[50px]" alt="">
+            <h5 class="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white mt-2">Platinum Membership</h5>
+            <h6 class="text-center text-xs text-gray-500 mb-3">valid for 12 months</h6>
+            <h1 class="text-center text-3xl font-extrabold mb-3">Rs: 15 000.00</h1>
+            </a>
+
+
+        </div>
+    </div>
+
 </body>
 </html>
