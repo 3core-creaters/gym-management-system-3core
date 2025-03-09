@@ -84,7 +84,8 @@
         <h1 class="text-center text-2xl mb-8">Browse by Categories</h1>
         <div class="flex mx-10 mb-5">
 
-                <a href="#" class="block">
+        
+                <a href="{{ route('strength') }}" class="block">
                     <div class="max-w-sm m-1 bg-white border border-red-500 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
                         <div class="relative w-full h-48">
                             <img src="{{ asset('storage/images/2.1.jpg') }}" class="w-full h-full object-cover" alt="">
