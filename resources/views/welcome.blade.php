@@ -25,13 +25,13 @@
         <a href="#" class="block py-2 px-3 text-white font-extrabold rounded-sm md:bg-transparent md:text-red-500 md:p-0 md:dark:text-red-500" aria-current="page">Home</a>
       </li>
       <li>
-        <a href="#" class="block py-2 px-3 text-white font-extrabold rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-500 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+        <a href="#about" class="block py-2 px-3 text-white font-extrabold rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-500 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
       </li>
       <li>
-        <a href="#" class="block py-2 px-3 text-white font-extrabold rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-500 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+        <a href="#service" class="block py-2 px-3 text-white font-extrabold rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-500 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
       </li>
       <li>
-        <a href="#" class="block py-2 px-3 text-white font-extrabold rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-500 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+        <a href="#contact" class="block py-2 px-3 text-white font-extrabold rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-500 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
       </li>
     </ul>
   </div>
@@ -51,8 +51,8 @@
     </div>
     </div>
 
-    <h1 class="text-center mt-10 text-3xl">Unleash Your Potential</h1>
-    <h4 class="text-center text-lg text-red-500">With Us</h4>
+    <h1 id="service" class="text-center mt-10 text-3xl">UNLEASH YOUR POTENTIAL</h1>
+    <h4 class="text-center text-lg font-extrabold text-red-500">With Us</h4>
     <div class="flex m-5 pt-2">
         <div class="flex flex-col text-center m-2">
             <a href="#" class="justify-center items-center flex flex-col max-w-sm p-6 bg-white border border-red-300 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
@@ -79,8 +79,8 @@
         </div>
     </div>
 
-    <div class="flex flex-col ml-12 mr-12 p-5">
-        <h3 class="text-center text-sm text-red-500">UNIQUE CATEGORIES</h3>
+    <div class="flex flex-col ml-12 mr-12 p-5 scroll-smooth">
+        <h3 class="text-center text-sm font-extrabold text-red-500">UNIQUE CATEGORIES</h3>
         <h1 class="text-center text-2xl mb-8">Browse by Categories</h1>
         <div class="flex mx-10 mb-5">
 
@@ -166,16 +166,16 @@
     </div>
 
     <div class="m-6">
-        <h2 class="text-center text-sm text-red-500">PRICING PLAN</h2>
+        <h2 class="text-center text-sm font-extrabold text-red-500">PRICING PLAN</h2>
         <h1 class="text-center text-3xl mb-2">MEMBERSHIP PLANS</h1>
         <h4 class="text-center text-xs">We keep it simple. No catch. Just outrageously prices</h4>
-        <div class="flex justify-center mt-3">
+        <div class="flex justify-center mt-3 mb-6">
                 
             <a href="#" class="flex flex-col items-center justify-center m-8 max-w-sm p-6 w-[270px] bg-white border border-red-500 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <img src="{{asset('storage/images/3.1.png')}}" class="w-[50px] h-[50px]" alt="">
             <h5 class="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white mt-2">Silver Membership</h5>
             <h6 class="text-center text-xs text-gray-500 mb-3">valid for 1 month</h6>
-            <h1 class="text-center text-3xl font-extrabold mb-3">Rs: 4500.00</h1>
+            <h1 class="text-center text-3xl font-extrabold dark:text-white mb-3">Rs: 4500.00</h1>
             </a>
 
                         
@@ -183,7 +183,7 @@
             <img src="{{asset('storage/images/3.0.png')}}" class="w-[50px] h-[50px]" alt="">
             <h5 class="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white mt-2">Gold Membership</h5>
             <h6 class="text-center text-xs text-gray-500 mb-3">valid for 6 months</h6>
-            <h1 class="text-center text-3xl font-extrabold mb-3">Rs: 10 000.00</h1>
+            <h1 class="text-center text-3xl font-extrabold dark:text-white mb-3">Rs: 10 000.00</h1>
             </a>
 
 
@@ -192,10 +192,170 @@
             <img src="{{asset('storage/images/3.2.png')}}" class="w-[50px] h-[50px]" alt="">
             <h5 class="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white mt-2">Platinum Membership</h5>
             <h6 class="text-center text-xs text-gray-500 mb-3">valid for 12 months</h6>
-            <h1 class="text-center text-3xl font-extrabold mb-3">Rs: 15 000.00</h1>
+            <h1 class="text-center text-3xl font-extrabold dark:text-white mb-3">Rs: 15 000.00</h1>
             </a>
 
 
+        </div>
+
+        <h3 class="text-center text-sm font-extrabold text-red-500">FIND MOTIVATION</h3>
+        <h1 class="text-center text-3xl mb-8">We Supply That</h1>
+
+        <div class="flex justify-center items-center">
+            
+        <div class="flex justify-center items-center py-1">
+       
+        <button id="prevBtn" class="mx-8 px-6 py-2 font-bold text-3xl text-red-500">
+            <
+        </button>
+
+        <div class="video-container w-full max-w-full">
+            <video id="videoSlideShow" width="720" height="480" controls>
+                <source id="videoSource" src="{{ asset('storage/videos/1.0.mp4') }}" type="video/mp4">
+                
+            </video>
+        </div>
+
+        <button id="nextBtn" class="mx-8 px-6 py-2 font-bold text-3xl text-red-500">
+            >
+        </button>
+        </div>
+    </div>
+
+    <h1 id="about" class="text-center text-3xl mt-16 font-extrabold text-red-600">ABOUT US</h1>
+    <h3 class="text-center text-xs mb-4">We Are Super Fitness. This Is Us.!</h3>
+
+    <div class="flex justify-center items-center p-5">
+        <div class="flex flex-col justify-center w-200 h-80 p-6 m-2 rounded-lg bg-gray-100">
+
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('storage/images/log.png') }}" class="h-11 w-[80px]" alt="Gym Logo">
+                <span class="self-center font-thin text-3xl text-red-600 whitespace-nowrap ">Super Fitness</span>
+            </div>
+
+            <h3 class="text-lg font-extrabold mt-4">Our Team Of</h3>
+            <h1 class="text-2xl mb-2 font-extrabold text-red-600">PERSONAL TRAINERS</h1>
+            <p class="text-xs text-gray-600">Get personalized training plans tailored to your fitness goals. Book a session with our certified personal trainer today!</p>
+            
+            <button type="button" class="text-red-600 w-[120px] mt-4 outline-1 hover:bg-red-700 hover:text-white  hover:outline-none font-bold rounded-lg text-sm px-4 py-2 text-center">
+                  Get started
+            </button>
+
+        </div>
+
+        <div class="relative m-2">
+    
+            <img src="{{ asset('storage/images/4.0.jpg') }}" alt="Image" class="w-100 h-80 rounded-lg">
+
+            <div class="absolute top-50 left-0 right-0 bottom-0 flex flex-col justify-center items-center bg-opacity-50 text-white p-5">
+                <h1 class="text-xl font-bold text-red-700">Camilla Cabello</h1>
+                <p>Female Trainer</p>
+            </div>
+        </div>
+
+        <div class="relative m-2">
+    
+            <img src="{{ asset('storage/images/4.1.jpg') }}" alt="Image" class="w-100 h-80 rounded-lg">
+
+            <div class="absolute top-50 left-0 right-0 bottom-0 flex flex-col justify-center items-center bg-opacity-50 text-white p-5">
+                <h1 class="text-xl font-bold text-red-700">Marshall Mathers</h1>
+                <p>Male Trainer</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="contact" class="bg-gray-800 text-white py-6 w-full border-2 border-red-500">
+    <h1 class="text-center text-3xl mb-8 font-extrabold text-white">Contact Us</h1>
+
+    <div class="container mx-auto px-6">
+        <div class="flex justify-around">
+           
+            <div>
+                <h3 class="text-xl font-bold">SUPER FITNESS</h3>
+                <p class="mt-2 text-sm">No:52/A/1, Athurugiriya Road, Kottawa.</p>
+                <p class="mt-1 text-sm">Email: info@superFitness.com</p>
+                <p class="mt-1 text-sm">Phone: 0112-456-789</p>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold">Quick Links</h3>
+                <ul class="mt-2">
+                    <li><a href="#" class="text-sm hover:underline">Home</a></li>
+                    <li><a href="#about" class="text-sm hover:underline">About Us</a></li>
+                    <li><a href="#service" class="text-sm hover:underline">Services</a></li>
+                    <li><a href="#contact" class="text-sm hover:underline">Contact</a></li>
+                    <li><a href="#" class="text-sm hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold">Follow Us</h3>
+                <div class="mt-2 flex flex-col space-x-4">
+                    <a href="#" class="text-sm hover:text-blue-500">Facebook</a>
+                    <a href="#" class="text-sm hover:text-black">Twitter</a>
+                    <a href="#" class="text-sm hover:text-pink-500">Instagram</a>
+                    <a href="#" class="text-sm hover:text-green-700">WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('storage/images/log.png') }}" class="h-11 w-[80px]" alt="Gym Logo">
+                <span class="self-center font-thin text-3xl text-red-600 whitespace-nowrap ">Super Fitness</span>
+            </div>
+            <div class="mt-1">
+                <h1>ARE YOU READY <span class="text-xl">?</span></h1>
+                <h1 class="text-3xl font-extrabold mt-1">Join with Us</h1>
+                <span class="text-4xl font-extrabold text-red-700">NOW</span>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="mt-6 text-center text-sm">
+            <p>&copy; 2025 Super Fitness. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
+
+    <script>
+        const videos = [
+            '1.0.mp4',
+            '1.1.mp4',
+            '1.2.mp4',
+            '1.3.mp4'
+        ];
+
+        let currentVideoIndex = 0;
+        const videoElement = document.getElementById('videoSlideShow');
+        const videoSource = document.getElementById('videoSource');
+
+        function changeVideo(index) {
+            if (index < 0) {
+                currentVideoIndex = videos.length - 1;
+            } else if (index >= videos.length) {
+                currentVideoIndex = 0;
+            } else {
+                currentVideoIndex = index;
+            }
+
+            videoSource.src = '{{ asset("storage/videos/") }}/' + videos[currentVideoIndex];
+            videoElement.load();
+            videoElement.play();
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', function() {
+            changeVideo(currentVideoIndex - 1);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            changeVideo(currentVideoIndex + 1);
+        });
+
+        changeVideo(currentVideoIndex);
+    </script>
         </div>
     </div>
 
