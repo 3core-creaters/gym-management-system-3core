@@ -7,7 +7,7 @@
             
         </div>
     <div class="bg-gray-100 mt-[100]">
-        <div class="relative w-full h-[100vh] bg-cover bg-center flex items-center justify-center" 
+        <div class="relative w-full h-[110vh] bg-cover bg-center flex items-center justify-center" 
             style="background-image: url('{{ asset('storage/images/2.1.jpg') }}');">
             <div class="absolute inset-0 bg-black opacity-50"></div>
             <h1 class="text-white text-4xl font-bold relative">Strength Training</h1>

@@ -25,3 +25,7 @@ Route::get('/online', function () {
 Route::get('/flexible', function () {
     return view('flexible');
 })->name('flexible');
+
+Route::get('/mind', function () {
+    return view('mind');
+})->name('mind');
