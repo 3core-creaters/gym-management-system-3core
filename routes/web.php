@@ -21,3 +21,7 @@ Route::get('/powerful', function () {
 Route::get('/online', function () {
     return view('online');
 })->name('online');
+
+Route::get('/flexible', function () {
+    return view('flexible');
+})->name('flexible');
