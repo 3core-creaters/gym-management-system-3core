@@ -17,3 +17,7 @@ Route::get('/functional', function () {
 Route::get('/powerful', function () {
     return view('powerful');
 })->name('powerful');
+
+Route::get('/online', function () {
+    return view('online');
+})->name('online');
