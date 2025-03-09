@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('/strength', function () {
     return view('strength');
 })->name('strength');
+
+Route::get('/functional', function () {
+    return view('functional');
+})->name('functional');
