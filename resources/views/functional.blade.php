@@ -7,7 +7,6 @@
             <div class="bg-gray-100 w-7 h-15">
             
             </div>
-
     <div class="bg-gray-100">
         <div class="relative w-full h-[100vh] bg-cover bg-center flex items-center justify-center"
          style="background-image: url('{{ asset('storage/images/2.2.jpg') }}');">

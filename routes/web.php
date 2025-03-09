@@ -13,3 +13,7 @@ Route::get('/strength', function () {
 Route::get('/functional', function () {
     return view('functional');
 })->name('functional');
+
+Route::get('/powerful', function () {
+    return view('powerful');
+})->name('powerful');
