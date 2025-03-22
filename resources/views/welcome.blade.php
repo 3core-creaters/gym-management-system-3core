@@ -15,9 +15,11 @@
     <span class="self-center font-thin text-3xl text-red-500/85 whitespace-nowrap ">Super Fitness</span>
     </div>
   <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+  <a href="{{ route('login') }}" class="block">
       <button type="button" class="text-white bg-red-600/80 hover:bg-white hover:text-red-500  hover:outline-none font-bold rounded-lg text-sm px-4 py-2 text-center">
         Get started
     </button>
+    </a>
   </div>
   <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
     <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 ">

@@ -29,3 +29,11 @@ Route::get('/flexible', function () {
 Route::get('/mind', function () {
     return view('mind');
 })->name('mind');
+
+Route::get('/login', function(){
+    return view('login');
+})->name('login');
+
+Route::get('/register', function(){
+    return view('registration');
+})->name('register');
