@@ -31,6 +31,9 @@
             <h2 class="text-2xl font-bold mb-4">User Profile</h2>
             <p>Name: John Doe</p>
             <p>Email: johndoe@example.com</p>
+            <div class="mt-4 mb-4">
+            <a href="#workout" class="font-bold text-red-500">Workout Plan</a>
+            </div>
             <div class="flex flex-col h-full justify-end">
             <button class="mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500">Logout</button>
             <button class="mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500">Delete Account</button>
@@ -41,7 +44,7 @@
     <!-- Main Content -->
     <main class="mt-24">
 
-        <div class="flex justify-between">
+        <div class="flex justify-between pb-18">
         <div>
             <h1 class="ml-20 mr-35">Your Membership Plan</h1>
             <a href="#" class="flex flex-col items-center justify-center m-8 max-w-sm p-6 w-[270px] bg-white border border-red-500 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
@@ -50,24 +53,35 @@
             <h6 class="text-center text-xs text-gray-500 mb-3">valid for 6 months</h6>
             <h1 class="text-center text-3xl font-extrabold dark:text-white mb-3">Rs: 10 000.00</h1>
             </a>
+
+            <div>
+                <h1 class="text-center pr-8">Validity</h1>
+            </div>
+
+            <div class="flex flex-col ml-8 mt-4 mb-0 max-w-sm p-6 w-[270px] bg-white border border-red-500 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <h1>Start Date:</h1>
+                <h1>Expire Date:</h1>
+            </div>
         </div>
 
                     <!-- BMI Calculator Form -->
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-80">
+            <div class="bg-gray-800 p-4 pl-8 pr-8 rounded-lg shadow-lg w-80 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h1 class="text-center mb-8 font-bold text-xl">BMI Calculator</h1>
                 <label for="weight" class="text-white">Weight (kg)</label>
-                <input id="weight" type="number" class="w-full p-2 mt-2 bg-gray-700 text-white rounded-md" placeholder="Enter your weight">
+                <input id="weight" type="number" class="w-full p-2 mt-2 bg-gray-700 text-white rounded-md border-1 border-gray-500 hover:bg-gray-800" placeholder="Enter your weight">
 
                 <label for="height" class="text-white mt-4">Height (cm)</label>
-                <input id="height" type="number" class="w-full p-2 mt-2 bg-gray-700 text-white rounded-md" placeholder="Enter your height">
+                <input id="height" type="number" class="w-full p-2 mt-2 bg-gray-700 text-white rounded-md border-1 border-gray-500 hover:bg-gray-800" placeholder="Enter your height">
 
                 <button id="calculateBMI" class="w-full py-2 mt-4 bg-red-600 rounded-lg text-white font-semibold hover:bg-white hover:text-red-500">Calculate BMI</button>
                 
                 <!-- BMI Result -->
-                <div id="bmiResult" class="text-center mt-14 text-2xl text-white"></div>
+                <div id="bmiResult" class="text-center mt-14 text-2xl text-white font-bold border border-gray-500"></div>
             </div>
 
             <!-- Calendar -->
-            <div id="calendar" class="max-w-sm mx-auto bg-gray-700 p-4 rounded-lg shadow-lg">
+            <div id="calendar" class="max-w-sm mx-auto bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <h1 class="text-center text-xl mb-5 font-bold">Calendar</h1>
                     <div class="flex justify-between items-center">
                         <button id="prevMonth" class="text-white hover:text-red-600">&lt;</button>
                         <h3 id="monthYear" class="text-xl font-bold text-white">January 2025</h3>
@@ -91,6 +105,121 @@
 
     
     </div>
+
+    <div id="workout" class="flex flex-col items-center justify-center min-h-screen pb-12 bg-black">
+    <h1 class="text-center text-4xl text-white font-extrabold mt-20 mb-6">Your Workout Plan</h1>
+
+    <!-- Workout Plan Form -->
+    <div class="flex flex-col justify-center items-center w-full max-w-md p-12 bg-black outline-1 outline-red-600 rounded-xl shadow-xl">
+    <img src="{{asset('storage/images/5.0.png')}}" class="w-[70px] h-[70px]" alt="">
+        
+        <form method="POST" action="" class="mt-6">
+            @csrf
+           
+            <div>
+               <p>Enter Your Gym ID</p>
+               <input type="text" name="workout_type" class="w-full p-2 outline-1 outline-red-600 mt-1 text-black rounded-md focus:ring focus:ring-red-500" value="{{ $workoutPlan->workout_type ?? '' }}" required>
+            </div>
+
+            <!-- Workout Type -->
+            <div class="mt-4">
+                <label class="block text-white">Workout Type</label>
+                <input type="text" name="workout_type" class="w-full p-2 outline-1 outline-red-600 mt-1 text-black rounded-md focus:ring focus:ring-red-500" value="{{ $workoutPlan->workout_type ?? '' }}" required>
+            </div>
+
+            <div>
+            <div class="overflow-x-auto py-6">
+    <table class="min-w-full bg-black text-white rounded-lg shadow-lg">
+        <thead>
+            <tr class="border-b-2 border-red-600">
+                <th class="px-4 py-2 text-center font-bold">No</th>
+                <th class="px-4 py-2 text-center font-bold">Exercise</th>
+                <th class="px-4 py-2 text-center font-bold">Sets</th>
+                <th class="px-4 py-2 text-center font-bold">Reps</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">1</td>
+                <td class="px-4 py-2 text-center">Push-up</td>
+                <td class="px-4 py-2 text-center">3</td>
+                <td class="px-4 py-2 text-center">12</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">2</td>
+                <td class="px-4 py-2 text-center">Squats</td>
+                <td class="px-4 py-2 text-center">4</td>
+                <td class="px-4 py-2 text-center">15</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">3</td>
+                <td class="px-4 py-2 text-center">Pull-up</td>
+                <td class="px-4 py-2 text-center">3</td>
+                <td class="px-4 py-2 text-center">8</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">4</td>
+                <td class="px-4 py-2 text-center">Lunges</td>
+                <td class="px-4 py-2 text-center">4</td>
+                <td class="px-4 py-2 text-center">12</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">5</td>
+                <td class="px-4 py-2 text-center">Bench Press</td>
+                <td class="px-4 py-2 text-center">4</td>
+                <td class="px-4 py-2 text-center">10</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">6</td>
+                <td class="px-4 py-2 text-center">Deadlift</td>
+                <td class="px-4 py-2 text-center">3</td>
+                <td class="px-4 py-2 text-center">8</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">7</td>
+                <td class="px-4 py-2 text-center">Shoulder Press</td>
+                <td class="px-4 py-2 text-center">3</td>
+                <td class="px-4 py-2 text-center">12</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">8</td>
+                <td class="px-4 py-2 text-center">Bicep Curls</td>
+                <td class="px-4 py-2 text-center">3</td>
+                <td class="px-4 py-2 text-center">15</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">9</td>
+                <td class="px-4 py-2 text-center">Tricep Dips</td>
+                <td class="px-4 py-2 text-center">4</td>
+                <td class="px-4 py-2 text-center">12</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">10</td>
+                <td class="px-4 py-2 text-center">Leg Press</td>
+                <td class="px-4 py-2 text-center">4</td>
+                <td class="px-4 py-2 text-center">10</td>
+            </tr>
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">11</td>
+                <td class="px-4 py-2 text-center">Lat Pulldown</td>
+                <td class="px-4 py-2 text-center">3</td>
+                <td class="px-4 py-2 text-center">12</td>
+            </tr>
+            <tr>
+                <td class="px-4 py-2 text-center">12</td>
+                <td class="px-4 py-2 text-center">Leg Curl</td>
+                <td class="px-4 py-2 text-center">3</td>
+                <td class="px-4 py-2 text-center">10</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
 
     </main>
 
