@@ -33,6 +33,15 @@
                 </select>
             </div>
 
+            <!-- Gender -->
+            <div class="mt-4">
+                <label class="block text-white">Gender</label>
+                <select name="role" class="w-full p-2 mt-1 outline-1 outline-red-600 text-black rounded-md focus:ring focus:ring-red-500" required>
+                    <option value="member">Male</option>
+                    <option value="trainer">Female</option>
+                </select>
+            </div>
+
             <!-- Birthday -->
             <div class="mt-4">
                 <label class="block text-white">Birthday</label>

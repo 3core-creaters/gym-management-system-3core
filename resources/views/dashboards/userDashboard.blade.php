@@ -29,8 +29,11 @@
         <div class="p-5 text-center mt-4">
             <button id="closeSidebar" class="text-red-500 font-bold text-xl float-right">X</button>
             <h2 class="text-2xl font-bold mb-4">User Profile</h2>
-            <p>Name: John Doe</p>
-            <p>Email: johndoe@example.com</p>
+            <p>Name: winz xvi</p>
+            <p>Email: winz@gmail.com</p>
+            <p>Gym ID:</p>
+            <p>Gender:</p>
+            <p>Status:</p>
             <div class="mt-4 mb-4">
             <a href="#workout" class="font-bold text-red-500">Workout Plan</a>
             </div>

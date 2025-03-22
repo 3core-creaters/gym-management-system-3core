@@ -36,39 +36,39 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="mt-24">
+    <main class="mt-5">
         <div class="flex justify-between">
-        <div class="p-6 m-12">
-    <!-- Gym ID Input -->
-    <input type="text" id="gymIdInput" class="text-white border border-gray-500 p-2 mr-5 rounded-lg bg-gray-900" placeholder="Enter Member's Gym ID">
-    <button id="loadWorkoutBtn" class="bg-gray-900 border border-blue-400 text-blue-400 px-4 py-2 rounded-lg font-bold">Load Workout</button>
+            <div class="p-6 m-20">
+                <!-- Gym ID Input -->
+                <input type="text" id="gymIdInput" class="text-white border border-gray-500 p-2 mr-5 rounded-lg bg-gray-900" placeholder="Enter Member's Gym ID">
+                <button id="loadWorkoutBtn" class="bg-gray-900 border border-blue-400 text-blue-400 px-4 py-2 rounded-lg font-bold">Load Workout</button>
 
-    <!-- Workout Table -->
-    <div class="overflow-x-auto py-6">
-        <table class="min-w-full bg-black text-white rounded-lg shadow-lg">
-            <thead>
-                <tr class="border-b-2 border-red-600">
-                    <th class="px-4 py-2 text-center font-bold">No</th>
-                    <th class="px-4 py-2 text-center font-bold">Exercise</th>
-                    <th class="px-4 py-2 text-center font-bold">Sets</th>
-                    <th class="px-4 py-2 text-center font-bold">Reps</th>
-                    <th class="px-4 py-2 text-center font-bold">Actions</th>
-                </tr>
-            </thead>
-            <tbody id="workoutTableBody">
-                <!-- Loaded Workout Data Will Appear Here -->
-            </tbody>
-        </table>
+                <!-- Workout Table -->
+                <div class="overflow-x-auto py-6">
+                    <table class="min-w-full bg-black text-white rounded-lg shadow-lg">
+                        <thead>
+                            <tr class="border-b-2 border-red-600">
+                                <th class="px-4 py-2 text-center font-bold">No</th>
+                                <th class="px-4 py-2 text-center font-bold">Exercise</th>
+                                <th class="px-4 py-2 text-center font-bold">Sets</th>
+                                <th class="px-4 py-2 text-center font-bold">Reps</th>
+                                <th class="px-4 py-2 text-center font-bold">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="workoutTableBody">
+                            <!-- Loaded Workout Data Will Appear Here -->
+                        </tbody>
+                    </table>
 
-        <!-- Add Row Button -->
-        <div class="mt-4 flex justify-between">
-            <button id="addRowBtn" class="bg-gray-900 border border-yellow-500 text-yellow-600 px-4 py-2 rounded-lg font-bold">+ Add Row</button>
-            <button id="saveWorkoutBtn" class="bg-gray-900 border border-green-500 text-green-600 px-4 py-2 rounded-lg font-bold">Save Workout</button>
-        </div>
+                <!-- Add Row Button -->
+                <div class="mt-4 flex justify-between">
+                    <button id="addRowBtn" class="bg-gray-900 border border-yellow-500 text-yellow-600 px-4 py-2 rounded-lg font-bold">+ Add Row</button>
+                    <button id="saveWorkoutBtn" class="bg-gray-900 border border-green-500 text-green-600 px-4 py-2 rounded-lg font-bold">Save Workout</button>
+                </div>
     </div>
 </div>
 
-<div class="bg-gray-800 m-15 p-4 pl-8 pr-8 rounded-lg shadow-lg w-80 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        <div class="bg-gray-800 m-25 mb-10 p-4 pl-8 pr-8 rounded-lg shadow-lg w-80 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <h1 class="text-center mb-8 font-bold text-xl">BMI Calculator</h1>
                 <label for="weight" class="text-white">Weight (kg)</label>
                 <input id="weight" type="number" class="w-full p-2 mt-2 bg-gray-700 text-white rounded-md border-1 border-gray-500 hover:bg-gray-800" placeholder="Enter your weight">
@@ -80,10 +80,63 @@
                 
                 <!-- BMI Result -->
                 <div id="bmiResult" class="text-center mt-14 text-2xl text-white font-bold border border-gray-500"></div>
-            </div>
-
-
         </div>
+        </div>
+
+        <div class="overflow-x-auto py-6">
+    <table class="min-w-full bg-black text-white rounded-lg shadow-lg">
+        <thead>
+            <tr class="border-b-2 border-red-600">
+                <th class="px-4 py-2 text-center font-bold">Gym ID</th>
+                <th class="px-4 py-2 text-center font-bold">First Name</th>
+                <th class="px-4 py-2 text-center font-bold">Action</th>
+            </tr>
+        </thead>
+        <tbody id="membersTable">
+            <!-- Example Members (Dynamically Loaded) -->
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">G123</td>
+                <td class="px-4 py-2 text-center">John</td>
+                <td class="px-4 py-2 text-center">
+                    <button class="view-profile-btn text-red-500 font-bold" data-id="G123">View Profile</button>
+                </td>
+            </tr>
+            <tr class="border-b border-red-600 hidden" id="profile-G123">
+                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                    <p><strong>Age:</strong> 25</p>
+                    <p><strong>Contact:</strong> 9876543210</p>
+                    <p><strong>Membership:</strong> Active</p>
+                </td>
+            </tr>
+
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">G124</td>
+                <td class="px-4 py-2 text-center">Alice</td>
+                <td class="px-4 py-2 text-center">
+                    <button class="view-profile-btn text-red-500 font-bold" data-id="G124">View Profile</button>
+                </td>
+            </tr>
+            <tr class="border-b border-red-600 hidden" id="profile-G124">
+                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                    <p><strong>Age:</strong> 30</p>
+                    <p><strong>Contact:</strong> 9123456789</p>
+                    <p><strong>Membership:</strong> Expired</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    document.querySelectorAll('.view-profile-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            let profileRow = document.getElementById('profile-' + this.dataset.id);
+            profileRow.classList.toggle('hidden');
+            this.textContent = profileRow.classList.contains('hidden') ? 'View Profile' : 'Hide Profile';
+        });
+    });
+</script>
+
     </main>
 
 </div>
@@ -268,6 +321,72 @@
         .catch(error => console.error("Error saving workout plan:", error));
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const membersTableBody = document.getElementById("membersTableBody");
+
+    // Fetch all members
+    fetch("/get-all-members")
+        .then(response => response.json())
+        .then(data => {
+            membersTableBody.innerHTML = "";
+            data.forEach(member => {
+                addMemberRow(member);
+            });
+        })
+        .catch(error => console.error("Error fetching members:", error));
+
+    // Function to add a member row
+    function addMemberRow(member) {
+        let newRow = document.createElement("tr");
+        newRow.classList.add("border-b", "border-red-600");
+
+        newRow.innerHTML = `
+            <td class="px-4 py-2 text-center">${member.gym_id}</td>
+            <td class="px-4 py-2 text-center">${member.first_name}</td>
+            <td class="px-4 py-2 text-center">
+                <button class="view-profile-btn bg-blue-600 text-white px-4 py-2 rounded-lg font-bold" data-gym-id="${member.gym_id}">
+                    View Profile
+                </button>
+            </td>
+        `;
+
+        membersTableBody.appendChild(newRow);
+
+        let viewProfileBtn = newRow.querySelector(".view-profile-btn");
+        viewProfileBtn.addEventListener("click", function () {
+            let gymId = this.getAttribute("data-gym-id");
+            viewMemberProfile(newRow, gymId);
+        });
+    }
+
+    // Function to view a member's profile
+    function viewMemberProfile(row, gymId) {
+        fetch(`/get-member-details/${gymId}`)
+            .then(response => response.json())
+            .then(data => {
+                let profileRow = document.createElement("tr");
+                profileRow.classList.add("border-b", "border-red-600", "bg-gray-800");
+
+                profileRow.innerHTML = `
+                    <td colspan="3">
+                        <div class="p-4">
+                            <p><strong>Last Name:</strong> ${data.last_name}</p>
+                            <p><strong>Age:</strong> ${data.age}</p>
+                            <p><strong>Email:</strong> ${data.email}</p>
+                            <p><strong>Phone:</strong> ${data.phone}</p>
+                            <p><strong>Address:</strong> ${data.address}</p>
+                        </div>
+                    </td>
+                `;
+
+                // Insert profile row below the selected row
+                row.insertAdjacentElement("afterend", profileRow);
+            })
+            .catch(error => console.error("Error fetching member details:", error));
+    }
+});
+
 
 </script>
 
