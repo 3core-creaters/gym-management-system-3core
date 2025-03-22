@@ -14,7 +14,7 @@
 
             <!-- Middle Navbar -->
             <div class="hidden md:flex space-x-8 text-lg font-semibold">
-                <h1 class="text-3xl font-bold">Welcome to the Dashboard</h1>
+                <h1 class="text-3xl font-bold">Yo..! Let's Do It</h1>
             </div>
 
             <!-- Profile Button -->

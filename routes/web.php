@@ -41,3 +41,7 @@ Route::get('/register', function(){
 Route::get('/user-dashboard', function(){
     return view('dashboards.userDashboard');
 })->name('user-dashboard');
+
+Route::get('/trainer-dashboard', function(){
+    return view('dashboards.trainerDashboard');
+})->name('trainer-dashboard');
