@@ -37,3 +37,7 @@ Route::get('/login', function(){
 Route::get('/register', function(){
     return view('registration');
 })->name('register');
+
+Route::get('/user-dashboard', function(){
+    return view('dashboards.userDashboard');
+})->name('user-dashboard');
