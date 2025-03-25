@@ -45,3 +45,7 @@ Route::get('/user-dashboard', function(){
 Route::get('/trainer-dashboard', function(){
     return view('dashboards.trainerDashboard');
 })->name('trainer-dashboard');
+
+Route::get('/admin-dashboard', function(){
+    return view('dashboards.adminDashboard');
+})->name('admin-dashboard');

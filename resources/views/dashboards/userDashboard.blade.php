@@ -33,6 +33,7 @@
             <p>Email: winz@gmail.com</p>
             <p>Gym ID:</p>
             <p>Gender:</p>
+            <p>Role:</p>
             <p>Status:</p>
             <div class="mt-4 mb-4">
             <a href="#workout" class="font-bold text-red-500">Workout Plan</a>

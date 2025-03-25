@@ -14,7 +14,7 @@
 
             <!-- Middle Navbar -->
             <div class="hidden md:flex space-x-8 text-lg font-semibold">
-               <h1 class="text-3xl font-bold">Yo..! Let's Motivate Them</h1>
+               <h1 class="text-3xl font-bold">Yo..! Let's Be Healthy</h1>
             </div>
 
             <!-- Profile Button -->
@@ -44,7 +44,7 @@
 
     <!-- Main Content -->
     <main class="mt-5">
-    <h1 class="mt-15 ml-85 text-2xl font-bold text-red-700">Workout Plans of Users</h1>
+        <h1 class="mt-15 ml-85 text-2xl font-bold text-red-600">Workout Plans of Users</h1>
         <div class="flex justify-between">
             <div class="p-6 m-5 w-3xl">
                 <!-- Gym ID Input -->
@@ -91,6 +91,104 @@
         </div>
         </div>
 
+
+        <!-- payment details -->
+        <h1 class="mt-5 ml-120 text-2xl font-bold text-blue-400">Payment Details of Users</h1>
+<div class="flex justify-between">
+    <div class="p-6 m-5 w-3xl">
+        <!-- Gym ID Input for Payment -->
+        <input type="text" id="gymIdPaymentInput" class="text-white border border-gray-500 p-2 ml-12 mr-5 rounded-lg bg-gray-900" placeholder="Enter Member's Gym ID">
+        <button id="loadPaymentBtn" class="bg-gray-900 border border-blue-400 text-blue-400 px-4 py-2 rounded-lg font-bold">Load Payment</button>
+
+        <!-- Payment Table -->
+        <div class="overflow-x-auto py-6 w-5xl ml-12">
+            <table class="min-w-full bg-black text-white rounded-lg shadow-lg">
+                <thead>
+                    <tr class="border-b-2 border-blue-600">
+                        <th class="px-4 py-2 text-center font-bold">ID</th>
+                        <th class="px-4 py-2 text-center font-bold">Member Name</th>
+                        <th class="px-4 py-2 text-center font-bold">
+                            <select name="" id="">
+                                <option value="">Package</option>
+                                <option value="">Silver</option>
+                                <option value="">Gold</option>
+                                <option value="">Platinum</option>
+                            </select>
+                        </th>
+                        <th class="px-4 py-2 text-center font-bold">
+                            <select name="" id="">
+                                <option value="">Paid/Not</option>
+                                <option value="">Paid</option>
+                                <option value="">Not Paid</option>
+                            </select>
+                        </th>
+                        <th class="px-4 py-2 text-center font-bold">Date</th>
+                        <th class="px-4 py-2 text-center font-bold">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="paymentTableBody">
+                    <!-- Loaded Payment Data Will Appear Here -->
+                </tbody>
+            </table>
+
+            <!-- Add Row Button -->
+            <div class="mt-4 flex justify-between">
+                <button id="addPaymentRowBtn" class="bg-gray-900 border border-yellow-500 text-yellow-600 px-4 py-2 rounded-lg font-bold">+ Add Row</button>
+                <button id="savePaymentBtn" class="bg-gray-900 border border-green-500 text-green-600 px-4 py-2 rounded-lg font-bold">Save Payment</button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+        <!-- trainers profile -->
+        <div class="overflow-x-auto py-6">
+            <h1 class="text-center text-3xl font-bold mb-10">See Our All Trainers</h1>
+    <table class="w-5xl m-25 mt-0 mb-0 bg-black text-white rounded-lg shadow-lg">
+        <thead>
+            <tr class="border-b-2 border-red-600">
+                <th class="px-4 py-2 text-center font-bold">Trainer ID</th>
+                <th class="px-4 py-2 text-center font-bold">Name</th>
+                <th class="px-4 py-2 text-center font-bold">Action</th>
+            </tr>
+        </thead>
+        <tbody id="trainersTable">
+            <!-- Example Trainers (Dynamically Loaded) -->
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">T001</td>
+                <td class="px-4 py-2 text-center">Mike Tyson</td>
+                <td class="px-4 py-2 text-center">
+                    <button class="view-trainer-btn text-red-500 font-bold" data-id="T001">View Profile</button>
+                </td>
+            </tr>
+            <tr class="border-b border-red-600 hidden" id="trainer-T001">
+                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                    <p><strong>Specialty:</strong> Strength Training</p>
+                    <p><strong>Experience:</strong> 10 Years</p>
+                    <p><strong>Contact:</strong> 9876543210</p>
+                </td>
+            </tr>
+
+            <tr class="border-b border-red-600">
+                <td class="px-4 py-2 text-center">T002</td>
+                <td class="px-4 py-2 text-center">Sarah Connor</td>
+                <td class="px-4 py-2 text-center">
+                    <button class="view-trainer-btn text-red-500 font-bold" data-id="T002">View Profile</button>
+                </td>
+            </tr>
+            <tr class="border-b border-red-600 hidden" id="trainer-T002">
+                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                    <p><strong>Specialty:</strong> Cardio & Weight Loss</p>
+                    <p><strong>Experience:</strong> 8 Years</p>
+                    <p><strong>Contact:</strong> 9123456789</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+    <!-- Members table -->
         <div class="overflow-x-auto py-6">
             <h1 class="text-center text-3xl font-bold mb-10">See Our All Members</h1>
     <table class="w-5xl m-25 mt-0 mb-10 bg-black text-white rounded-lg shadow-lg">
@@ -135,16 +233,6 @@
         </tbody>
     </table>
 </div>
-
-<script>
-    document.querySelectorAll('.view-profile-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            let profileRow = document.getElementById('profile-' + this.dataset.id);
-            profileRow.classList.toggle('hidden');
-            this.textContent = profileRow.classList.contains('hidden') ? 'View Profile' : 'Hide Profile';
-        });
-    });
-</script>
 
     </main>
 
@@ -395,6 +483,187 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error("Error fetching member details:", error));
     }
 });
+
+// view users profile
+document.querySelectorAll('.view-profile-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            let profileRow = document.getElementById('profile-' + this.dataset.id);
+            profileRow.classList.toggle('hidden');
+            this.textContent = profileRow.classList.contains('hidden') ? 'View Profile' : 'Hide Profile';
+        });
+    });
+
+// view Trainers profile
+document.querySelectorAll('.view-trainer-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            let trainerRow = document.getElementById('trainer-' + this.dataset.id);
+            trainerRow.classList.toggle('hidden');
+            this.textContent = trainerRow.classList.contains('hidden') ? 'View Profile' : 'Hide Profile';
+        });
+        
+    });
+
+    // payment
+    document.addEventListener("DOMContentLoaded", function () {
+    const paymentTableBody = document.getElementById("paymentTableBody");
+    const gymIdPaymentInput = document.getElementById("gymIdPaymentInput");
+    const loadPaymentBtn = document.getElementById("loadPaymentBtn");
+    const addPaymentRowBtn = document.getElementById("addPaymentRowBtn");
+    const savePaymentBtn = document.getElementById("savePaymentBtn");
+
+    // Load payment details for a member
+    loadPaymentBtn.addEventListener("click", function () {
+        let gymId = gymIdPaymentInput.value.trim();
+        if (!gymId) {
+            alert("Please enter a Gym ID!");
+            return;
+        }
+
+        // Fetch existing payment data
+        fetch(`/get-payment-details/${gymId}`)
+            .then(response => response.json())
+            .then(data => {
+                paymentTableBody.innerHTML = ""; // Clear existing table
+                if (data.length === 0) {
+                    alert("No payment details found for this Gym ID.");
+                    return;
+                }
+
+                // Populate table with existing data
+                data.forEach((payment, index) => {
+                    addPaymentRow(index + 1, payment.name, payment.package, payment.paidStatus, payment.date);
+                });
+            })
+            .catch(error => console.error("Error fetching payment data:", error));
+    });
+
+    // Function to add a new row
+    function addPaymentRow(no, name = "New Member", package = "", paidStatus = "", date = "YYYY-MM-DD") {
+        let newRow = document.createElement("tr");
+        newRow.classList.add("border-b", "border-blue-600");
+
+        newRow.innerHTML = `
+            <td class="px-4 py-2 text-center">${no}</td>
+            <td class="px-4 py-2 text-center editable">${name}</td>
+            <td class="px-4 py-2 text-center">
+                <select class="package-select text-black w-full">
+                    <option value="">Package</option>
+                    <option value="Silver" ${package === "Silver" ? "selected" : ""}>Silver</option>
+                    <option value="Gold" ${package === "Gold" ? "selected" : ""}>Gold</option>
+                    <option value="Platinum" ${package === "Platinum" ? "selected" : ""}>Platinum</option>
+                </select>
+            </td>
+            <td class="px-4 py-2 text-center">
+                <select class="paid-select text-black w-full">
+                    <option value="">Paid/Not</option>
+                    <option value="Paid" ${paidStatus === "Paid" ? "selected" : ""}>Paid</option>
+                    <option value="Not Paid" ${paidStatus === "Not Paid" ? "selected" : ""}>Not Paid</option>
+                </select>
+            </td>
+            <td class="px-4 py-2 text-center editable">${date}</td>
+            <td class="px-4 py-2 text-center">
+                <button class="edit-payment-btn text-red-500 font-bold">Edit</button>
+                <button class="save-payment-btn hidden text-green-500 font-bold">Save</button>
+                <button class="delete-payment-btn text-yellow-500 font-bold">Delete</button>
+            </td>
+        `;
+
+        paymentTableBody.appendChild(newRow);
+
+        let editBtn = newRow.querySelector(".edit-payment-btn");
+        let saveBtn = newRow.querySelector(".save-payment-btn");
+        let deleteBtn = newRow.querySelector(".delete-payment-btn");
+
+        editBtn.addEventListener("click", function () {
+            enableEditing(editBtn, saveBtn, newRow);
+        });
+
+        saveBtn.addEventListener("click", function () {
+            saveEditing(editBtn, saveBtn, newRow);
+        });
+
+        deleteBtn.addEventListener("click", function () {
+            newRow.remove();
+        });
+    }
+
+    // Enable editing
+    function enableEditing(editBtn, saveBtn, row) {
+        let cells = row.querySelectorAll(".editable");
+
+        cells.forEach(cell => {
+            let input = document.createElement("input");
+            input.type = "text";
+            input.value = cell.innerText;
+            input.classList.add("text-black", "w-full", "text-center");
+            cell.innerHTML = "";
+            cell.appendChild(input);
+        });
+
+        editBtn.classList.add("hidden");
+        saveBtn.classList.remove("hidden");
+    }
+
+    // Save edited data
+    function saveEditing(editBtn, saveBtn, row) {
+        let cells = row.querySelectorAll(".editable");
+
+        cells.forEach(cell => {
+            let input = cell.querySelector("input");
+            if (input) {
+                cell.innerText = input.value;
+            }
+        });
+
+        saveBtn.classList.add("hidden");
+        editBtn.classList.remove("hidden");
+    }
+
+    // Add new payment row
+    addPaymentRowBtn.addEventListener("click", function () {
+        let rowCount = paymentTableBody.querySelectorAll("tr").length + 1;
+        addPaymentRow(rowCount);
+    });
+
+    // Save payment details to the database
+    savePaymentBtn.addEventListener("click", function () {
+        let gymId = gymIdPaymentInput.value.trim();
+        if (!gymId) {
+            alert("Please enter a Gym ID before saving!");
+            return;
+        }
+
+        let paymentDetails = [];
+        let rows = paymentTableBody.querySelectorAll("tr");
+
+        rows.forEach(row => {
+            let columns = row.querySelectorAll(".editable");
+            let name = columns[0].innerText;
+            let packageSelect = row.querySelector(".package-select");
+            let paidSelect = row.querySelector(".paid-select");
+
+            let package = packageSelect ? packageSelect.value : "";
+            let paidStatus = paidSelect ? paidSelect.value : "";
+            let date = columns[2].innerText;
+
+            paymentDetails.push({ name, package, paidStatus, date });
+        });
+
+        // Send payment details to the server
+        fetch("/save-payment-details", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+            },
+            body: JSON.stringify({ gymId, paymentDetails })
+        })
+        .then(response => response.json())
+        .then(data => alert("Payment details saved successfully!"))
+        .catch(error => console.error("Error saving payment details:", error));
+    });
+});
+
 
 
 </script>
