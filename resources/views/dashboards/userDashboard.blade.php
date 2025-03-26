@@ -50,7 +50,7 @@
 
         <div class="flex justify-between pb-18">
         <div>
-            <h1 class="ml-20 mr-35">Your Membership Plan</h1>
+            <h1 class="ml-20 mr-20">Your Membership Plan</h1>
             <a href="#" class="flex flex-col items-center justify-center m-8 max-w-sm p-6 w-[270px] bg-white border border-red-500 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <img src="{{asset('storage/images/3.0.png')}}" class="w-[50px] h-[50px]" alt="">
             <h5 class="mb-2 text-center text-xl font-bold tracking-tight text-gray-900 dark:text-white mt-2">Gold Membership</h5>
@@ -69,7 +69,7 @@
         </div>
 
                     <!-- BMI Calculator Form -->
-            <div class="bg-gray-800 p-4 pl-8 pr-8 rounded-lg shadow-lg w-80 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <div class="w-xs bg-gray-800 p-4 pl-8 pr-8 rounded-lg shadow-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <h1 class="text-center mb-8 font-bold text-xl">BMI Calculator</h1>
                 <label for="weight" class="text-white">Weight (kg)</label>
                 <input id="weight" type="number" class="w-full p-2 mt-2 bg-gray-700 text-white rounded-md border-1 border-gray-500 hover:bg-gray-800" placeholder="Enter your weight">
@@ -84,7 +84,7 @@
             </div>
 
             <!-- Calendar -->
-            <div id="calendar" class="max-w-sm mx-auto bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <div id="calendar" class="w-m mx-8 bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                 <h1 class="text-center text-xl mb-5 font-bold">Calendar</h1>
                     <div class="flex justify-between items-center">
                         <button id="prevMonth" class="text-white hover:text-red-600">&lt;</button>
