@@ -47,9 +47,15 @@
             <h1 class="absolute top-2/5 left-1/7 pl-9 transform -translate-x-1/2 -translate-y-1/2 text-white font-extrabold text-4xl">
              Unlock Your Full <br>Potential <span class="text-red-500">with</span> <br>Workouting
             </h1>
-            <div class="absolute top-5/9 left-1/8 transform -translate-x-1/2 space-x-4">
+            <div class="flex absolute top-5/9 left-1/8 transform -translate-x-1/2 space-x-4">
+
+        <a href="{{ route('register') }}" class="block">
         <button class="text-red-500 w-[100px] bg-transparent outline-1 hover:bg-transparent hover:text-white hover:font-bold hover:outline-1 font-bold rounded-lg text-sm px-4 py-2 text-center">Register</button>
+        </a>
+
+        <a href="{{ route('login') }}" class="block">
         <button class="text-red-500 w-[100px] bg-transparent outline-1 hover:bg-transparent hover:text-white hover:font-bold  hover:outline-1 font-bold rounded-lg text-sm px-4 py-2 text-center">Log</button>
+        </a>
     </div>
     </div>
 
@@ -239,10 +245,12 @@
             <h3 class="text-lg font-extrabold mt-4">Our Team Of</h3>
             <h1 class="text-2xl mb-2 font-extrabold text-red-600">PERSONAL TRAINERS</h1>
             <p class="text-xs text-gray-600">Get personalized training plans tailored to your fitness goals. Book a session with our certified personal trainer today!</p>
-            
+
+            <a href="{{ route('login') }}" class="block">
             <button type="button" class="text-red-600 w-[120px] mt-4 outline-1 hover:bg-red-700 hover:text-white  hover:outline-none font-bold rounded-lg text-sm px-4 py-2 text-center">
                   Get started
             </button>
+            </a>
 
         </div>
 
