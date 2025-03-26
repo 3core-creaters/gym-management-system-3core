@@ -94,15 +94,16 @@
 
         <!-- payment details -->
         <h1 class="mt-5 ml-120 text-2xl font-bold text-blue-400">Payment Details of Users</h1>
+<div class="flex justify-center">
 <div class="flex justify-between">
-    <div class="p-6 m-5 w-3xl">
+    <div class="p-6 m-5">
         <!-- Gym ID Input for Payment -->
         <input type="text" id="gymIdPaymentInput" class="text-white border border-gray-500 p-2 ml-12 mr-5 rounded-lg bg-gray-900" placeholder="Enter Member's Gym ID">
         <button id="loadPaymentBtn" class="bg-gray-900 border border-blue-400 text-blue-400 px-4 py-2 rounded-lg font-bold">Load Payment</button>
 
         <!-- Payment Table -->
-        <div class="overflow-x-auto py-6 w-5xl ml-12">
-            <table class="min-w-full bg-black text-white rounded-lg shadow-lg">
+        <div class="overflow-x-auto py-6 w-2xl">
+            <table class="w-2xl bg-black text-white rounded-lg shadow-lg">
                 <thead>
                     <tr class="border-b-2 border-blue-600">
                         <th class="px-4 py-2 text-center font-bold">ID</th>
@@ -139,100 +140,109 @@
         </div>
     </div>
 </div>
+</div>
         
 
         <!-- trainers profile -->
         <div class="overflow-x-auto py-6">
             <h1 class="text-center text-3xl font-bold mb-10">See Our All Trainers</h1>
-    <table class="w-5xl m-25 mt-0 mb-0 bg-black text-white rounded-lg shadow-lg">
-        <thead>
-            <tr class="border-b-2 border-red-600">
-                <th class="px-4 py-2 text-center font-bold">Trainer ID</th>
-                <th class="px-4 py-2 text-center font-bold">Name</th>
-                <th class="px-4 py-2 text-center font-bold">Action</th>
-            </tr>
-        </thead>
-        <tbody id="trainersTable">
-            <!-- Example Trainers (Dynamically Loaded) -->
-            <tr class="border-b border-red-600">
-                <td class="px-4 py-2 text-center">T001</td>
-                <td class="px-4 py-2 text-center">Mike Tyson</td>
-                <td class="px-4 py-2 text-center">
-                    <button class="view-trainer-btn text-red-500 font-bold" data-id="T001">View Profile</button>
-                </td>
-            </tr>
-            <tr class="border-b border-red-600 hidden" id="trainer-T001">
-                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                    <p><strong>Specialty:</strong> Strength Training</p>
-                    <p><strong>Experience:</strong> 10 Years</p>
-                    <p><strong>Contact:</strong> 9876543210</p>
-                </td>
-            </tr>
 
-            <tr class="border-b border-red-600">
-                <td class="px-4 py-2 text-center">T002</td>
-                <td class="px-4 py-2 text-center">Sarah Connor</td>
-                <td class="px-4 py-2 text-center">
-                    <button class="view-trainer-btn text-red-500 font-bold" data-id="T002">View Profile</button>
-                </td>
-            </tr>
-            <tr class="border-b border-red-600 hidden" id="trainer-T002">
-                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                    <p><strong>Specialty:</strong> Cardio & Weight Loss</p>
-                    <p><strong>Experience:</strong> 8 Years</p>
-                    <p><strong>Contact:</strong> 9123456789</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            <div class="flex justify-center">
+                        <table class="w-2xl m-25 mt-0 mb-0 bg-black text-white rounded-lg shadow-lg">
+                    <thead>
+                        <tr class="border-b-2 border-red-600">
+                            <th class="px-4 py-2 text-center font-bold">Trainer ID</th>
+                            <th class="px-4 py-2 text-center font-bold">Name</th>
+                            <th class="px-4 py-2 text-center font-bold">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trainersTable">
+                        <!-- Example Trainers (Dynamically Loaded) -->
+                        <tr class="border-b border-red-600">
+                            <td class="px-4 py-2 text-center">T001</td>
+                            <td class="px-4 py-2 text-center">Mike Tyson</td>
+                            <td class="px-4 py-2 text-center">
+                                <button class="view-trainer-btn text-red-500 font-bold" data-id="T001">View Profile</button>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-red-600 hidden" id="trainer-T001">
+                            <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                                <p><strong>Specialty:</strong> Strength Training</p>
+                                <p><strong>Experience:</strong> 10 Years</p>
+                                <p><strong>Contact:</strong> 9876543210</p>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b border-red-600">
+                            <td class="px-4 py-2 text-center">T002</td>
+                            <td class="px-4 py-2 text-center">Sarah Connor</td>
+                            <td class="px-4 py-2 text-center">
+                                <button class="view-trainer-btn text-red-500 font-bold" data-id="T002">View Profile</button>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-red-600 hidden" id="trainer-T002">
+                            <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                                <p><strong>Specialty:</strong> Cardio & Weight Loss</p>
+                                <p><strong>Experience:</strong> 8 Years</p>
+                                <p><strong>Contact:</strong> 9123456789</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+            </div>
 
 
-    <!-- Members table -->
-        <div class="overflow-x-auto py-6">
-            <h1 class="text-center text-3xl font-bold mb-10">See Our All Members</h1>
-    <table class="w-5xl m-25 mt-0 mb-10 bg-black text-white rounded-lg shadow-lg">
-        <thead>
-            <tr class="border-b-2 border-red-600">
-                <th class="px-4 py-2 text-center font-bold">Gym ID</th>
-                <th class="px-4 py-2 text-center font-bold">First Name</th>
-                <th class="px-4 py-2 text-center font-bold">Action</th>
-            </tr>
-        </thead>
-        <tbody id="membersTable">
-            <!-- Example Members (Dynamically Loaded) -->
-            <tr class="border-b border-red-600">
-                <td class="px-4 py-2 text-center">G123</td>
-                <td class="px-4 py-2 text-center">John</td>
-                <td class="px-4 py-2 text-center">
-                    <button class="view-profile-btn text-red-500 font-bold" data-id="G123">View Profile</button>
-                </td>
-            </tr>
-            <tr class="border-b border-red-600 hidden" id="profile-G123">
-                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                    <p><strong>Age:</strong> 25</p>
-                    <p><strong>Contact:</strong> 9876543210</p>
-                    <p><strong>Membership:</strong> Active</p>
-                </td>
-            </tr>
+        <!-- Members table -->
+            <div class="overflow-x-auto py-6">
+                <h1 class="text-center text-3xl font-bold mb-10">See Our All Members</h1>
+        
+                <div class="flex justify-center">
+                            <table class="w-2xl m-25 mt-0 mb-10 bg-black text-white rounded-lg shadow-lg">
+                        <thead>
+                            <tr class="border-b-2 border-red-600">
+                                <th class="px-4 py-2 text-center font-bold">Gym ID</th>
+                                <th class="px-4 py-2 text-center font-bold">First Name</th>
+                                <th class="px-4 py-2 text-center font-bold">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="membersTable">
+                            <!-- Example Members (Dynamically Loaded) -->
+                            <tr class="border-b border-red-600">
+                                <td class="px-4 py-2 text-center">G123</td>
+                                <td class="px-4 py-2 text-center">John</td>
+                                <td class="px-4 py-2 text-center">
+                                    <button class="view-profile-btn text-red-500 font-bold" data-id="G123">View Profile</button>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-red-600 hidden" id="profile-G123">
+                                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                                    <p><strong>Age:</strong> 25</p>
+                                    <p><strong>Contact:</strong> 9876543210</p>
+                                    <p><strong>Membership:</strong> Active</p>
+                                </td>
+                            </tr>
 
-            <tr class="border-b border-red-600">
-                <td class="px-4 py-2 text-center">G124</td>
-                <td class="px-4 py-2 text-center">Alice</td>
-                <td class="px-4 py-2 text-center">
-                    <button class="view-profile-btn text-red-500 font-bold" data-id="G124">View Profile</button>
-                </td>
-            </tr>
-            <tr class="border-b border-red-600 hidden" id="profile-G124">
-                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                    <p><strong>Age:</strong> 30</p>
-                    <p><strong>Contact:</strong> 9123456789</p>
-                    <p><strong>Membership:</strong> Expired</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                            <tr class="border-b border-red-600">
+                                <td class="px-4 py-2 text-center">G124</td>
+                                <td class="px-4 py-2 text-center">Alice</td>
+                                <td class="px-4 py-2 text-center">
+                                    <button class="view-profile-btn text-red-500 font-bold" data-id="G124">View Profile</button>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-red-600 hidden" id="profile-G124">
+                                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                                    <p><strong>Age:</strong> 30</p>
+                                    <p><strong>Contact:</strong> 9123456789</p>
+                                    <p><strong>Membership:</strong> Expired</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+
+        </div>
 
     </main>
 

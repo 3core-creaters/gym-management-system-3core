@@ -93,48 +93,53 @@
 
         <div class="overflow-x-auto py-6">
             <h1 class="text-center text-3xl font-bold mb-10">See Our All Members</h1>
-    <table class="w-5xl m-25 mt-0 mb-10 bg-black text-white rounded-lg shadow-lg">
-        <thead>
-            <tr class="border-b-2 border-red-600">
-                <th class="px-4 py-2 text-center font-bold">Gym ID</th>
-                <th class="px-4 py-2 text-center font-bold">First Name</th>
-                <th class="px-4 py-2 text-center font-bold">Action</th>
-            </tr>
-        </thead>
-        <tbody id="membersTable">
-            <!-- Example Members (Dynamically Loaded) -->
-            <tr class="border-b border-red-600">
-                <td class="px-4 py-2 text-center">G123</td>
-                <td class="px-4 py-2 text-center">John</td>
-                <td class="px-4 py-2 text-center">
-                    <button class="view-profile-btn text-red-500 font-bold" data-id="G123">View Profile</button>
-                </td>
-            </tr>
-            <tr class="border-b border-red-600 hidden" id="profile-G123">
-                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                    <p><strong>Age:</strong> 25</p>
-                    <p><strong>Contact:</strong> 9876543210</p>
-                    <p><strong>Membership:</strong> Active</p>
-                </td>
-            </tr>
+    
 
-            <tr class="border-b border-red-600">
-                <td class="px-4 py-2 text-center">G124</td>
-                <td class="px-4 py-2 text-center">Alice</td>
-                <td class="px-4 py-2 text-center">
-                    <button class="view-profile-btn text-red-500 font-bold" data-id="G124">View Profile</button>
-                </td>
-            </tr>
-            <tr class="border-b border-red-600 hidden" id="profile-G124">
-                <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                    <p><strong>Age:</strong> 30</p>
-                    <p><strong>Contact:</strong> 9123456789</p>
-                    <p><strong>Membership:</strong> Expired</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            <div class="flex justify-center">
+                    <table class="w-2xl m-25 mt-0 mb-10 bg-black text-white rounded-lg shadow-lg">
+                <thead>
+                    <tr class="border-b-2 border-red-600">
+                        <th class="px-4 py-2 text-center font-bold">Gym ID</th>
+                        <th class="px-4 py-2 text-center font-bold">First Name</th>
+                        <th class="px-4 py-2 text-center font-bold">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="membersTable">
+                    <!-- Example Members (Dynamically Loaded) -->
+                    <tr class="border-b border-red-600">
+                        <td class="px-4 py-2 text-center">G123</td>
+                        <td class="px-4 py-2 text-center">John</td>
+                        <td class="px-4 py-2 text-center">
+                            <button class="view-profile-btn text-red-500 font-bold" data-id="G123">View Profile</button>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-red-600 hidden" id="profile-G123">
+                        <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                            <p><strong>Age:</strong> 25</p>
+                            <p><strong>Contact:</strong> 9876543210</p>
+                            <p><strong>Membership:</strong> Active</p>
+                        </td>
+                    </tr>
+
+                    <tr class="border-b border-red-600">
+                        <td class="px-4 py-2 text-center">G124</td>
+                        <td class="px-4 py-2 text-center">Alice</td>
+                        <td class="px-4 py-2 text-center">
+                            <button class="view-profile-btn text-red-500 font-bold" data-id="G124">View Profile</button>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-red-600 hidden" id="profile-G124">
+                        <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                            <p><strong>Age:</strong> 30</p>
+                            <p><strong>Contact:</strong> 9123456789</p>
+                            <p><strong>Membership:</strong> Expired</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+        </div>
 
 <script>
     document.querySelectorAll('.view-profile-btn').forEach(button => {
