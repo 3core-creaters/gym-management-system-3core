@@ -53,17 +53,17 @@ class AuthController extends Controller
         {
             if(Auth::User()->is_role == 2)
             {
-                return redirect()->intended('dashboard/adminDashboard');
+                return redirect()->intended('dashboards/adminDashboard');
                 // return response()->json(['message' => 'You are in admin dashboard']);
             }
             else if(Auth::User()->is_role == 1)
             {
-                return redirect()->intended('dashboard/trainerDashboard');
+                return redirect()->intended('dashboards/trainerDashboard');
                 // return response()->json(['message' => 'You are in trainer dashboard']);
             }
             else if(Auth::User()->is_role == 0)
             {
-                return redirect()->intended('dashboard/userDashboard');
+                return redirect()->intended('dashboards/userDashboard');
                 // return response()->json(['message' => 'You are in user dashboard']);
             }
             else
@@ -77,6 +77,10 @@ class AuthController extends Controller
         }
 
     }
-}
 
-?>
+    public function logout()
+    {
+        Auth::logout();
+        return redirect(url('login'));
+    }
+}
