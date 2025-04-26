@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use App\Models\Member;
+use App\Models\Trainer;
 
 class DashboardController extends Controller
 {    
@@ -24,5 +26,13 @@ class DashboardController extends Controller
         {
             return view('dashboards.userDashboard');
         }
+    }
+
+    public function index()
+    {
+        $members = Member::all();
+        $trainers = Trainer::all();
+
+        return view('dashboards.adminDashboard', compact('members', 'trainers'));
     }
 }

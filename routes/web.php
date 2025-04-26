@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\TrainerController;
+use App\Http\Controllers\WorkoutPlanController;
 
 // Ensure the DashboardController class exists in the specified namespace
 // If it doesn't exist, create it in 'app/Http/Controllers/DashboardController.php'
@@ -29,3 +32,8 @@ Route::group(['middleware' => 'member'], function(){
 });
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('dashboards/adminDashboard', [DashboardController::class, 'index'])->name('adminDashboard');
+
+Route::get('/workout/fetch/{gymId}', [WorkoutPlanController::class, 'fetchWorkout']);
+Route::post('/workout/save', [WorkoutPlanController::class, 'saveWorkout']);
