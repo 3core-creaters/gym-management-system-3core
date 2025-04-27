@@ -159,7 +159,6 @@
                     </div>
                 </a>
 
-
                 <a href="{{ route('mind') }}" class="block">
                     <div class="max-w-sm m-1 bg-white border border-red-500 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
                         <div class="relative w-full h-48">
