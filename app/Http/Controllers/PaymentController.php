@@ -23,10 +23,10 @@ class PaymentController extends Controller
         foreach ($data as $item) {
             Payment::create([
                 'gym_id' => $gymId,
-                'member_name' => $item['member_name'],
+                'member_name' => $item['name'],
                 'package' => $item['package'],
-                'payment_status' => $item['payment_status'],
-                'payment_date' => $item['payment_date'],
+                'payment_status' => $item['paidStatus'],
+                'payment_date' => $item['date'],
             ]);
         }
 
