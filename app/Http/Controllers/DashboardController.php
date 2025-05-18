@@ -35,4 +35,10 @@ class DashboardController extends Controller
 
         return view('dashboards.adminDashboard', compact('members', 'trainers'));
     }
+
+    public function showAdminDashboard()
+    {
+        $trainers = Trainer::all(); // Get all trainers from the database
+        return view('dashboards.adminDashboard', compact('trainers'));
+    }
 }

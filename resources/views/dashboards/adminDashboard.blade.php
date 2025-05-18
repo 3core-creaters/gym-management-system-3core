@@ -29,15 +29,43 @@
         <div class="p-5 text-center mt-4">
             <button id="closeSidebar" class="text-red-500 font-bold text-xl float-right">X</button>
             <h2 class="text-2xl font-bold mb-4">User Profile</h2>
-            <p>Name: winz xvi</p>
-            <p>Email: winz@gmail.com</p>
-            <p>Gym ID:</p>
-            <p>Gender:</p>
-            <p>Role:</p>
-            <p>Status:</p>
-            <div class="flex flex-col h-full justify-end">
-            <button class="mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500">Logout</button>
-            <button class="mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500">Delete Account</button>
+            <p>Name: {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</p>
+            <p>Email: {{ Auth::user()->email }}</p>
+            <p>Gym ID: 
+                @if(Auth::user()->is_role == 0 && Auth::user()->member)
+                    {{ Auth::user()->member->gym_id }}
+                @else
+                    N/A
+                @endif
+            </p>
+            <p>Gender: 
+                @if(Auth::user()->gender == 0)
+                    Male
+                @elseif(Auth::user()->gender == 1)
+                    Female
+                @else
+                    Not specified
+                @endif
+            </p>
+            <p>Role: 
+                @if(Auth::user()->is_role == 2)
+                    Admin
+                @elseif(Auth::user()->is_role == 1)
+                    Trainer
+                @else
+                    Member
+                @endif
+            </p>
+            <p>Status: 
+                @if(Auth::user()->is_role == 0 && Auth::user()->member)
+                    {{ Auth::user()->member->membership_status }}
+                @else
+                    Active
+                @endif
+            </p>
+                <div class="flex flex-col h-full justify-end">
+                <button class="mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500"><a href="{{route("login")}}"> Logout </a></button>
+                <button class="mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500">Delete Account</button>
             </div>
         </div>
     </aside>
@@ -143,55 +171,107 @@
 </div>
         
 
-        <!-- trainers profile -->
-        <div class="overflow-x-auto py-6">
-            <h1 class="text-center text-3xl font-bold mb-10">See Our All Trainers</h1>
+<div class="overflow-x-auto px-6 py-8">
+    <h1 class="text-center text-3xl font-bold mb-10 text-yellow-400">Approve New Trainers</h1>
+    <table class="min-w-full bg-gray-800 text-white rounded-lg shadow-lg">
+        <thead>
+            <tr class="border-b-2 border-yellow-500">
+                <th class="px-4 py-2 text-center font-bold">Full Name</th>
+                <th class="px-4 py-2 text-center font-bold">Email</th>
+                <th class="px-4 py-2 text-center font-bold">Gender</th>
+                <th class="px-4 py-2 text-center font-bold">Birthday</th>
+                <th class="px-4 py-2 text-center font-bold">Specialty</th>
+                <th class="px-4 py-2 text-center font-bold">Experience</th>
+                <th class="px-4 py-2 text-center font-bold">Contact</th>
+                <th class="px-4 py-2 text-center font-bold">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($pendingTrainers as $trainer)
+                <tr class="border-b border-gray-600">
+                    <form action="{{ route('admin.approveTrainer') }}" method="POST" class="bg-gray-900 hover:bg-gray-800 transition duration-200">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{ $trainer->id }}">
+                        <td class="px-4 py-2 text-center">{{ $trainer->first_name }} {{ $trainer->last_name }}</td>
+                        <td class="px-4 py-2 text-center">{{ $trainer->email }}</td>
+                        <td class="px-4 py-2 text-center">{{ $trainer->gender == 0 ? 'Male' : 'Female' }}</td>
+                        <td class="px-4 py-2 text-center">{{ $trainer->birthday }}</td>
+                        <td class="px-4 py-2 text-center">
+                            <input type="text" name="specialty" class="w-full px-2 py-1 rounded-md text-black" placeholder="Specialty" required>
+                        </td>
+                        <td class="px-4 py-2 text-center">
+                            <input type="number" name="experience" class="w-full px-2 py-1 rounded-md text-black" placeholder="Years" required>
+                        </td>
+                        <td class="px-4 py-2 text-center">
+                            <input type="text" name="contact" class="w-full px-2 py-1 rounded-md text-black" placeholder="Contact" required>
+                        </td>
+                        <td class="px-4 py-2 text-center">
+                            <div class="flex flex-col space-y-2">
+                                {{-- Approve Button (You might want to wrap this in a form too if it's a POST) --}}
+                                <form action="{{ route('admin.approveTrainer', ['id' => $trainer->id]) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-md">
+                                        Approve
+                                    </button>
+                                </form>
+                        
+                                {{-- Reject Button --}}
+                                <form action="{{ route('admin.rejectTrainer', ['id' => $trainer->id]) }}" method="POST"
+                                      onsubmit="return confirm('Are you sure you want to reject this trainer?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md">
+                                        Reject
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                        
+                    </form>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
-            <div class="flex justify-center">
-                        <table class="w-2xl m-25 mt-0 mb-0 bg-black text-white rounded-lg shadow-lg">
-                    <thead>
-                        <tr class="border-b-2 border-red-600">
-                            <th class="px-4 py-2 text-center font-bold">Trainer ID</th>
-                            <th class="px-4 py-2 text-center font-bold">Name</th>
-                            <th class="px-4 py-2 text-center font-bold">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="trainersTable">
-                        <!-- Example Trainers (Dynamically Loaded) -->
+
+
+
+    {{-- ✅ Approved Trainers Section --}}
+    <div class="overflow-x-auto py-6">
+        <h1 class="text-center text-3xl font-bold mb-10">See Our All Trainers</h1>
+
+        <div class="flex justify-center">
+            <table class="w-2xl m-25 mt-0 mb-0 bg-black text-white rounded-lg shadow-lg">
+                <thead>
+                    <tr class="border-b-2 border-red-600">
+                        <th class="px-4 py-2 text-center font-bold">Trainer ID</th>
+                        <th class="px-4 py-2 text-center font-bold">Name</th>
+                        <th class="px-4 py-2 text-center font-bold">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="trainersTable">
+                    @foreach ($trainers as $trainer)
                         <tr class="border-b border-red-600">
-                            <td class="px-4 py-2 text-center">T001</td>
-                            <td class="px-4 py-2 text-center">Mike Tyson</td>
+                            <td class="px-4 py-2 text-center">T{{ $trainer->trainer_id }}</td>
+                            <td class="px-4 py-2 text-center">{{ $trainer->first_name }} {{ $trainer->last_name }}</td>
                             <td class="px-4 py-2 text-center">
-                                <button class="view-trainer-btn text-red-500 font-bold" data-id="T001">View Profile</button>
+                                <button class="view-trainer-btn text-red-500 font-bold" data-id="T{{ $trainer->user_id }}">View Profile</button>
                             </td>
                         </tr>
-                        <tr class="border-b border-red-600 hidden" id="trainer-T001">
+                        <tr class="border-b border-red-600 hidden" id="trainer-T{{ $trainer->user_id }}">
                             <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                                <p><strong>Specialty:</strong> Strength Training</p>
-                                <p><strong>Experience:</strong> 10 Years</p>
-                                <p><strong>Contact:</strong> 9876543210</p>
+                                <p><strong>Specialty:</strong> {{ $trainer->specialty }}</p>
+                                <p><strong>Experience:</strong> {{ $trainer->experience }} Years</p>
+                                <p><strong>Contact:</strong> {{ $trainer->contact }}</p>
                             </td>
                         </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-                        <tr class="border-b border-red-600">
-                            <td class="px-4 py-2 text-center">T002</td>
-                            <td class="px-4 py-2 text-center">Sarah Connor</td>
-                            <td class="px-4 py-2 text-center">
-                                <button class="view-trainer-btn text-red-500 font-bold" data-id="T002">View Profile</button>
-                            </td>
-                        </tr>
-                        <tr class="border-b border-red-600 hidden" id="trainer-T002">
-                            <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                                <p><strong>Specialty:</strong> Cardio & Weight Loss</p>
-                                <p><strong>Experience:</strong> 8 Years</p>
-                                <p><strong>Contact:</strong> 9123456789</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-
-            </div>
+</div>
 
 
         <!-- Members table -->
@@ -326,10 +406,10 @@
         newRow.classList.add("border-b", "border-red-600");
 
         newRow.innerHTML = `
-            <td class="px-4 py-2 text-center">${no}</td>
-            <td class="px-4 py-2 text-center editable">${exercise}</td>
-            <td class="px-4 py-2 text-center editable">${sets}</td>
-            <td class="px-4 py-2 text-center editable">${reps}</td>
+            <td class="px-4 py-2 text-center" style="color: white">${no}</td>
+            <td class="px-4 py-2 text-center editable" style="color: white">${exercise}</td>
+            <td class="px-4 py-2 text-center editable" style="color: white">${sets}</td>
+            <td class="px-4 py-2 text-center editable" style="color: white">${reps}</td>
             <td class="px-4 py-2 text-center">
                 <button class="edit-btn text-red-500 font-bold">Edit</button>
                 <button class="save-btn hidden text-green-500 font-bold">Save</button>
@@ -364,7 +444,7 @@
             let input = document.createElement("input");
             input.type = "text";
             input.value = cell.innerText;
-            input.classList.add("text-black", "w-full", "text-center");
+            input.classList.add("text-white", "w-full", "text-center");
             cell.innerHTML = "";
             cell.appendChild(input);
         });
@@ -553,24 +633,24 @@ document.querySelectorAll('.view-trainer-btn').forEach(button => {
         newRow.classList.add("border-b", "border-blue-600");
 
         newRow.innerHTML = `
-            <td class="px-4 py-2 text-center">${no}</td>
-            <td class="px-4 py-2 text-center editable">${name}</td>
+            <td class="px-4 py-2 text-center" style="color: white">${no}</td>
+            <td class="px-4 py-2 text-center editable" style="color: white">${name}</td>
             <td class="px-4 py-2 text-center">
-                <select class="package-select text-black w-full">
+                <select class="package-select text-black w-full" style="color: white">
                     <option value="">Package</option>
-                    <option value="Silver" ${package === "Silver" ? "selected" : ""}>Silver</option>
-                    <option value="Gold" ${package === "Gold" ? "selected" : ""}>Gold</option>
-                    <option value="Platinum" ${package === "Platinum" ? "selected" : ""}>Platinum</option>
+                    <option value="Silver" style="color: black" ${package === "Silver" ? "selected" : ""}>Silver</option>
+                    <option value="Gold" style="color: black" ${package === "Gold" ? "selected" : ""}>Gold</option>
+                    <option value="Platinum" style="color: black" ${package === "Platinum" ? "selected" : ""}>Platinum</option>
                 </select>
             </td>
-            <td class="px-4 py-2 text-center">
-                <select class="paid-select text-black w-full">
-                    <option value="">Paid/Not</option>
-                    <option value="Paid" ${paidStatus === "Paid" ? "selected" : ""}>Paid</option>
-                    <option value="Not Paid" ${paidStatus === "Not Paid" ? "selected" : ""}>Not Paid</option>
+            <td class="px-4 py-2 text-center" >
+                <select class="paid-select text-black w-full" style="color: white">
+                    <option value="" style="color: black">Paid/Not</option>
+                    <option value="Paid" style="color: black"${paidStatus === "Paid" ? "selected" : ""}>Paid</option>
+                    <option value="Not Paid" style="color: black" ${paidStatus === "Not Paid" ? "selected" : ""}>Not Paid</option>
                 </select>
             </td>
-            <td class="px-4 py-2 text-center editable">${date}</td>
+            <td class="px-4 py-2 text-center editable" style="color: white">${date}</td>
             <td class="px-4 py-2 text-center">
                 <button class="edit-payment-btn text-red-500 font-bold">Edit</button>
                 <button class="save-payment-btn hidden text-green-500 font-bold">Save</button>
@@ -605,7 +685,7 @@ document.querySelectorAll('.view-trainer-btn').forEach(button => {
             let input = document.createElement("input");
             input.type = "text";
             input.value = cell.innerText;
-            input.classList.add("text-black", "w-full", "text-center");
+            input.classList.add("text-white", "w-full", "text-center");
             cell.innerHTML = "";
             cell.appendChild(input);
         });
@@ -672,7 +752,10 @@ document.querySelectorAll('.view-trainer-btn').forEach(button => {
         .then(data => alert("Payment details saved successfully!"))
         .catch(error => console.error("Error saving payment details:", error));
     });
+
+    
 });
+
 
 
 

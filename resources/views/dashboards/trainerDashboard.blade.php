@@ -29,14 +29,47 @@
         <div class="p-5 text-center mt-4">
             <button id="closeSidebar" class="text-red-500 font-bold text-xl float-right">X</button>
             <h2 class="text-2xl font-bold mb-4">User Profile</h2>
-            <p>Name: winz xvi</p>
-            <p>Email: winz@gmail.com</p>
-            <p>Gym ID:</p>
-            <p>Gender:</p>
-            <p>Role:</p>
-            <p>Status:</p>
+            <p>Name: {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</p>
+        <p>Email: {{ Auth::user()->email }}</p>
+        <p>Gym ID: 
+            @if(Auth::user()->is_role == 0 && Auth::user()->member)
+                {{ Auth::user()->member->gym_id }}
+            @else
+                N/A
+            @endif
+        </p>
+        <p>Gender: 
+            @if(Auth::user()->gender == 0)
+                Male
+            @elseif(Auth::user()->gender == 1)
+                Female
+            @else
+                Not specified
+            @endif
+        </p>
+        <p>Role: 
+            @if(Auth::user()->is_role == 2)
+                Admin
+            @elseif(Auth::user()->is_role == 1)
+                Trainer
+            @else
+                Member
+            @endif
+        </p>
+        <p>Status: 
+            @if(Auth::user()->is_role == 0 && Auth::user()->member)
+                {{ Auth::user()->member->membership_status }}
+            @else
+                Active
+            @endif
+        </p>
             <div class="flex flex-col h-full justify-end">
-            <button class="mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500">Logout</button>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500">
+                        Logout
+                    </button>
+                </form>                
             <button class="mt-4 bg-red-600 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500">Delete Account</button>
             </div>
         </div>

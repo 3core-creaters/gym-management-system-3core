@@ -20,5 +20,15 @@
     <!-- Footer -->
     @include('partials.footer')
 
+    @if ($errors->any())
+    <div class="mb-4 text-red-500 text-sm">
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </div>
+    @endif
+
+    
+
 </body>
 </html>

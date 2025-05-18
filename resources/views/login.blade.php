@@ -11,19 +11,28 @@
         
        
 
-        <form method="POST"  action="{{ route('login') }}" class="mt-6">
+        <form method="POST"  action="{{ url('login') }}" class="mt-6">
             @csrf
+
+            @if ($errors->any())
+                <div class="mb-4 text-red-500 text-sm">
+                    @foreach ($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
+
             
             <!-- Email Field -->
             <div>
                 <label class="block text-white">Email</label>
-                <input type="email" name="email" class="w-full p-2 mt-1 outline-1 outline-red-600 text-black rounded-md focus:ring focus:ring-red-500" required>
+                <input type="email" name="email" class="w-full p-2 mt-1 outline-1 outline-red-600 text-black rounded-md focus:ring focus:ring-red-500" style="color: white" required>
             </div>
 
             <!-- Password Field -->
             <div class="mt-4">
                 <label class="block text-white">Password</label>
-                <input type="password" name="password" class="w-full p-2 outline-1 outline-red-600 mt-1 text-black rounded-md focus:ring focus:ring-red-500" required>
+                <input type="password" name="password" class="w-full p-2 outline-1 outline-red-600 mt-1 text-black rounded-md focus:ring focus:ring-red-500" style="color: white" required>
             </div>
 
             <!-- Submit Button -->

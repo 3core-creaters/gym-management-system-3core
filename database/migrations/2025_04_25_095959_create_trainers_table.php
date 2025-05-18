@@ -12,19 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('trainers', function (Blueprint $table) {
-            $table->id();
+            $table->id();            
             $table->string('trainer_id')->unique();
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('specialty');
             $table->integer('experience');
             $table->string('contact');
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
-    }
 
-    /**
-     * Reverse the migrations.
-     */
+    }
+        
     public function down(): void
     {
         Schema::dropIfExists('trainers');
