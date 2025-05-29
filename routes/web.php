@@ -88,7 +88,13 @@ Route::get('/admin-dashboard', [AdminDashboardController::class, 'index'])->name
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::post('/admin-dashboard', [AdminDashboardController::class, 'approveTrainer'])->name('admin.approveTrainer');
-Route::delete('/admin-dashboard/{id}', [AdminDashboardController::class, 'rejectTrainerRequest'])->name('admin.rejectTrainer');
+Route::delete('/admin-dashboard/trainer-request/{id}', [AdminDashboardController::class, 'rejectTrainerRequest'])->name('admin.rejectTrainer');
 
+Route::get('/trainers/{id}/edit', [AdminDashboardController::class, 'editTrainer'])->name('admin.editTrainer');
+Route::put('/trainers/{id}', [AdminDashboardController::class, 'updateTrainer'])->name('admin.updateTrainer');
+Route::delete('/admin-dashboard/trainers/{id}', [AdminDashboardController::class, 'deleteTrainer'])->name('admin.deleteTrainer');
+
+
+Route::get('/admin/members', [AdminDashboardController::class, 'showAllMembers'])->name('admin.members');
 
 

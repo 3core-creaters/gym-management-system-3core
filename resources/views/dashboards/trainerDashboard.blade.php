@@ -138,37 +138,23 @@
                     </tr>
                 </thead>
                 <tbody id="membersTable">
-                    <!-- Example Members (Dynamically Loaded) -->
-                    <tr class="border-b border-red-600">
-                        <td class="px-4 py-2 text-center">G123</td>
-                        <td class="px-4 py-2 text-center">John</td>
-                        <td class="px-4 py-2 text-center">
-                            <button class="view-profile-btn text-red-500 font-bold" data-id="G123">View Profile</button>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-red-600 hidden" id="profile-G123">
-                        <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                            <p><strong>Age:</strong> 25</p>
-                            <p><strong>Contact:</strong> 9876543210</p>
-                            <p><strong>Membership:</strong> Active</p>
-                        </td>
-                    </tr>
-
-                    <tr class="border-b border-red-600">
-                        <td class="px-4 py-2 text-center">G124</td>
-                        <td class="px-4 py-2 text-center">Alice</td>
-                        <td class="px-4 py-2 text-center">
-                            <button class="view-profile-btn text-red-500 font-bold" data-id="G124">View Profile</button>
-                        </td>
-                    </tr>
-                    <tr class="border-b border-red-600 hidden" id="profile-G124">
-                        <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
-                            <p><strong>Age:</strong> 30</p>
-                            <p><strong>Contact:</strong> 9123456789</p>
-                            <p><strong>Membership:</strong> Expired</p>
-                        </td>
-                    </tr>
-                </tbody>
+                            @foreach ($members as $member)
+                                <tr class="border-b border-red-600">
+                                    <td class="px-4 py-2 text-center">{{ $member->member_id }}</td>
+                                    <td class="px-4 py-2 text-center">{{ $member->first_name }} {{ $member->last_name }}</td>
+                                    <td class="px-4 py-2 text-center">
+                                        <button class="view-profile-btn text-red-500 font-bold" data-id="{{ $member->member_id }}">View Profile</button>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-red-600 hidden" id="profile-{{ $member->member_id }}">
+                                    <td colspan="3" class="px-4 py-2 text-center bg-gray-800 text-white">
+                                        <p><strong>Age:</strong> {{ $member->age }}</p>
+                                        <p><strong>Contact:</strong> {{ $member->contact }}</p>
+                                        <p><strong>Membership:</strong> {{ $member->membership_status }}</p>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
             </table>
             </div>
 

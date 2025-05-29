@@ -18,7 +18,7 @@ class PaymentController extends Controller
         $data = $request->input('payments');
         $gymId = $request->input('gym_id');
 
-        Payment::where('gym_id', $gymId)->delete(); // old payments delete karanawa (optional)
+        Payment::where('gym_id', $gymId)->delete();
 
         foreach ($data as $item) {
             Payment::create([

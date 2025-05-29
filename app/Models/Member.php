@@ -16,4 +16,10 @@ class Member extends Model
         'contact',
         'membership_status',
     ];
+
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
 }

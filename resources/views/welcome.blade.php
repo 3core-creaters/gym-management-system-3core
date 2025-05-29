@@ -61,7 +61,7 @@
 
     <h1 id="service" class="text-center mt-10 text-3xl">UNLEASH YOUR POTENTIAL</h1>
     <h4 class="text-center text-lg font-extrabold text-red-500">With Us</h4>
-    <div class="flex m-5 pt-2">
+    <div class="flex m-5 pt-2 justify-center">
         <div class="flex flex-col text-center m-2">
             <a href="#" class="justify-center items-center flex flex-col max-w-sm p-6 bg-white border border-red-300 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <img src="{{ asset('storage/images/1.0.png') }}" class="w-[50px] h-[50px]" alt="">
@@ -90,7 +90,7 @@
     <div class="flex flex-col ml-12 mr-12 p-5 scroll-smooth">
         <h3 class="text-center text-sm font-extrabold text-red-500">UNIQUE CATEGORIES</h3>
         <h1 class="text-center text-2xl mb-8">Browse by Categories</h1>
-        <div class="flex mx-10 mb-5">
+        <div class="flex mx-10 mb-5 justify-center">
 
         
                 <a href="{{ route('strength') }}" class="block">
@@ -133,7 +133,7 @@
         </div>
 
 
-        <div class="flex mx-10 mt-5">
+        <div class="flex mx-10 mt-5 justify-center">
 
                 <a href="{{ route('online') }}" class="block">
                     <div class="max-w-sm m-1 bg-white border border-red-500 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
