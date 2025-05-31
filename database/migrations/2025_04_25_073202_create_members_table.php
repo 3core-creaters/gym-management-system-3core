@@ -16,10 +16,14 @@ return new class extends Migration
             
             $table->string('gym_id')->unique();
             $table->string('first_name');
-            $table->integer('age');
-            $table->string('contact');
-            $table->string('membership_status'); // e.g., 'Active', 'Expired'
+            $table->integer('age')->nullable();;
+            $table->string('contact')->nullable();;
+            $table->string('membership_status')->nullable();; // e.g., 'Active', 'Expired'
             $table->timestamps();
+
+            $table->unsignedBigInteger('user_id')->unique();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

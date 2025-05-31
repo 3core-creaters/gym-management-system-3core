@@ -106,19 +106,11 @@ public function updateTrainer(Request $request, $id)
     $trainer = Trainer::findOrFail($id);
     $user = $trainer->user;
 
-    $request->validate([
-        // 'first_name' => 'required|string|max:255',
-        // 'last_name' => 'required|string|max:255',
-        // 'email' => 'required|email',
+    $request->validate([        
         'contact' => 'required|string',
         'specialty' => 'nullable|string',
         'experience' => 'nullable|numeric'
-    ]);
-
-    // $user->update([
-    //     'name' => $request->first_name . ' ' . $request->last_name,
-    //     'email' => $request->email,
-    // ]);
+    ]);    
 
     $trainer->update($request->only(['contact', 'specialty', 'experience']));
 
@@ -137,7 +129,7 @@ public function deleteTrainer($id)
 
 public function showAllMembers()
 {
-    $members = Member::with('user')->get(); // eager load user data
+    $members = Member::with('user')->get();
 
     return view('admin-dashboard', compact('members'));
 }

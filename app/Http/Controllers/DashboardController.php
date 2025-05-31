@@ -41,4 +41,10 @@ class DashboardController extends Controller
         $trainers = Trainer::all(); // Get all trainers from the database
         return view('dashboards.adminDashboard', compact('trainers'));
     }
+
+    public function trainerDashboard()
+{
+    $members = Member::all(); // or filter by assigned trainer if needed
+    return view('dashboards.trainerDashboard', compact('members'));
+}
 }

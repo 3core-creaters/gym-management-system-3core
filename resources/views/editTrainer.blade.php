@@ -50,7 +50,7 @@
         {{-- Buttons --}}
         <div class="flex justify-between mt-6">
             <a href="{{ route('admin-dashboard') }}" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md">Cancel</a>
-            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-semibold">Update</button>
+            <button type="submit" class="bg-red-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-semibold">Update</button>
         </div>
     </form>
 </div>

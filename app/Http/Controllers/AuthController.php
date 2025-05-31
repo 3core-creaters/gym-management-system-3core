@@ -25,9 +25,7 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function register(Request $request){
-
-        // dd($request->all());
+    public function register(Request $request){        
 
         $request->validate([
             'first_name' => 'required',
@@ -53,15 +51,16 @@ class AuthController extends Controller
 
 
 
-        if ($user->is_role == 0) { // Member
-            Member::create([
-                'gym_id' => 'GYM-' . $user->id,
-                'first_name' => $user->first_name,
-                'age' => \Carbon\Carbon::parse($user->birthday)->age,
-                'contact' => 'N/A',
-                'membership_status' => 'Active',
+        if ($user->is_role == 0) {
+        Member::create([
+            'user_id' => $user->id, 
+            'gym_id' => 'GYM-' . $user->id,
+            'first_name' => $user->first_name,
+            'age' => \Carbon\Carbon::parse($user->birthday)->age,
+            'contact' => null,
+            'membership_status' => null,
             ]);
-        } elseif ($user->is_role == 1) { // Trainer
+        } elseif ($user->is_role == 1) {
             Trainer::create([
                 'trainer_id' => 'TRN-' . $user->id,
                 'name' => $user->first_name . ' ' . $user->last_name,
@@ -69,7 +68,7 @@ class AuthController extends Controller
                 'experience' => 0, 
                 'contact' => 'N/A',
             ]);
-        } elseif ($user->is_role == 2) { // Admin
+        } elseif ($user->is_role == 2) {
             Admin::create([
                 'admin_id' => 'ADM-' . $user->id,
                 'name' => $user->first_name . ' ' . $user->last_name,
@@ -104,9 +103,14 @@ class AuthController extends Controller
     
                 return redirect()->intended('trainer-dashboard');
             }
-            else if(Auth::User()->is_role == 0)
-            {
-                return redirect()->intended('user-dashboard');
+            else if (Auth::user()->is_role == 0) {
+            $member = Member::where('user_id', Auth::user()->id)->first();
+
+            if (!$member || !$member->age || !$member->contact || !$member->membership_status) {
+                return redirect()->route('member.profile.form');
+            }
+
+            return redirect()->intended('user-dashboard');
                 
             }
             else

@@ -6,6 +6,7 @@ use App\Http\Controllers\WorkoutPlanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\MemberController;
 
 
 
@@ -78,7 +79,7 @@ Route::group(['middleware' => 'trainer'], function(){
 });
 
 Route::group(['middleware' => 'member'], function(){
-    Route::get('dashboards/userDashboard', [DashboardController::class, 'userDashboard'])->name('userDashboard');
+    Route::get('/admin-dashboard', [DashboardController::class, 'showAdminDashboard'])->name('admin.dashboard');
 });
 
 Route::get('/admin-dashboard', [DashboardController::class, 'showAdminDashboard'])->name('admin-dashboard');
@@ -97,4 +98,10 @@ Route::delete('/admin-dashboard/trainers/{id}', [AdminDashboardController::class
 
 Route::get('/admin/members', [AdminDashboardController::class, 'showAllMembers'])->name('admin.members');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/complete-profile', [MemberController::class, 'showProfileForm'])->name('member.profile.form');
+    Route::post('/complete-profile', [MemberController::class, 'submitProfile'])->name('member.profile.submit');
+});
+
+Route::get('/trainer-dashboard', [DashboardController::class, 'trainerDashboard'])->name('trainer-dashboard');
 

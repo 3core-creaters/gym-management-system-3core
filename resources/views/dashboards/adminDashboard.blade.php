@@ -3,28 +3,27 @@
 @section('content')
 <div class="flex flex-col min-h-screen bg-gray-900 text-white">
 
-    <!-- Navbar -->
+    
     <nav class="fixed top-0 left-0 w-full bg-gray-900 shadow-md z-50">
         <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
-            <!-- Logo -->
+            
             <div class="flex items-center space-x-3">
                 <img src="{{ asset('storage/images/log.png') }}" class="h-11 w-[80px]" alt="Gym Logo">
                 <span class="font-thin text-3xl text-red-500/85">Super Fitness</span>
             </div>
 
-            <!-- Middle Navbar -->
+            
             <div class="hidden md:flex space-x-8 text-lg font-semibold">
                <h1 class="text-3xl font-bold">Yo..! Let's Be Healthy</h1>
             </div>
 
-            <!-- Profile Button -->
+            
             <button id="profileBtn" class="relative flex items-center space-x-2 bg-red-600/80 px-4 py-2 rounded-lg hover:bg-white hover:text-red-500">
                 <span>Profile</span>
             </button>
         </div>
     </nav>
-
-    <!-- Sidebar (Hidden by Default) -->
+    
     <aside id="sidebar" class="fixed top-0 right-0 w-64 h-full bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-40">
         <div class="p-5 text-center mt-4">
             <button id="closeSidebar" class="text-red-500 font-bold text-xl float-right">X</button>
@@ -70,16 +69,16 @@
         </div>
     </aside>
 
-    <!-- Main Content -->
+    
     <main class="mt-5">
         <h1 class="mt-15 ml-85 text-2xl font-bold text-red-600">Workout Plans of Users</h1>
         <div class="flex justify-between">
             <div class="p-6 m-5 w-3xl">
-                <!-- Gym ID Input -->
+                
                 <input type="text" id="gymIdInput" class="text-white border border-gray-500 p-2 mr-5 rounded-lg bg-gray-900" placeholder="Enter Member's Gym ID">
                 <button id="loadWorkoutBtn" class="bg-gray-900 border border-blue-400 text-blue-400 px-4 py-2 rounded-lg font-bold">Load Workout</button>
 
-                <!-- Workout Table -->
+                
                 <div class="overflow-x-auto py-6">
                     <table class="min-w-full bg-black text-white rounded-lg shadow-lg">
                         <thead>
@@ -92,11 +91,11 @@
                             </tr>
                         </thead>
                         <tbody id="workoutTableBody">
-                            <!-- Loaded Workout Data Will Appear Here -->
+                            
                         </tbody>
                     </table>
 
-                <!-- Add Row Button -->
+                
                 <div class="mt-4 flex justify-between">
                     <button id="addRowBtn" class="bg-gray-900 border border-yellow-500 text-yellow-600 px-4 py-2 rounded-lg font-bold">+ Add Row</button>
                     <button id="saveWorkoutBtn" class="bg-gray-900 border border-green-500 text-green-600 px-4 py-2 rounded-lg font-bold">Save Workout</button>
@@ -114,22 +113,22 @@
 
                 <button id="calculateBMI" class="w-full py-2 mt-4 bg-red-600 rounded-lg text-white font-semibold hover:bg-white hover:text-red-500">Calculate BMI</button>
                 
-                <!-- BMI Result -->
+                
                 <div id="bmiResult" class="text-center mt-14 text-2xl text-white font-bold border border-gray-500"></div>
         </div>
         </div>
 
 
-        <!-- payment details -->
+        
         <h1 class="mt-5 ml-120 text-2xl font-bold text-blue-400">Payment Details of Users</h1>
 <div class="flex justify-center">
 <div class="flex justify-between">
     <div class="p-6 m-5">
-        <!-- Gym ID Input for Payment -->
+        
         <input type="text" id="gymIdPaymentInput" class="text-white border border-gray-500 p-2 ml-12 mr-5 rounded-lg bg-gray-900" placeholder="Enter Member's Gym ID">
         <button id="loadPaymentBtn" class="bg-gray-900 border border-blue-400 text-blue-400 px-4 py-2 rounded-lg font-bold">Load Payment</button>
 
-        <!-- Payment Table -->
+        
         <div class="overflow-x-auto py-6 w-2xl">
             <table class="w-2xl bg-black text-white rounded-lg shadow-lg">
                 <thead>
@@ -155,8 +154,7 @@
                         <th class="px-4 py-2 text-center font-bold">Actions</th>
                     </tr>
                 </thead>
-                <tbody id="paymentTableBody">
-                    <!-- Loaded Payment Data Will Appear Here -->
+                <tbody id="paymentTableBody">                    
                 </tbody>
             </table>
 
@@ -207,7 +205,7 @@
                         </td>
                         <td class="px-4 py-2 text-center">
                             <div class="flex flex-col space-y-2">
-                                {{-- Approve Button (You might want to wrap this in a form too if it's a POST) --}}
+                                
                                 <form action="{{ route('admin.approveTrainer', ['id' => $trainer->id]) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-md">
@@ -215,7 +213,7 @@
                                     </button>
                                 </form>
                         
-                                {{-- Reject Button --}}
+                                
                                 <form action="{{ route('admin.rejectTrainer', ['id' => $trainer->id]) }}" method="POST"
                                       onsubmit="return confirm('Are you sure you want to reject this trainer?');">
                                     @csrf
@@ -232,12 +230,14 @@
         </tbody>
     </table>
 
+    
+
 
     <br>
     <br>
 
 
-    {{-- ✅ Approved Trainers Section --}}
+    
     <div class="overflow-x-auto py-6">
         <h1 class="text-center text-3xl font-bold mb-10">See Our All Trainers</h1>
 
@@ -291,7 +291,7 @@
 </div>
 
 
-        <!-- Members table -->
+        
             <div class="overflow-x-auto py-6">
                 <h1 class="text-center text-3xl font-bold mb-10">See Our All Members</h1>
         
@@ -300,7 +300,7 @@
                         <thead>
                             <tr class="border-b-2 border-red-600">
                                 <th class="px-4 py-2 text-center font-bold">Gym ID</th>
-                                <th class="px-4 py-2 text-center font-bold">First Name</th>
+                                <th class="px-4 py-2 text-center font-bold">Full Name</th>
                                 <th class="px-4 py-2 text-center font-bold">Action</th>
                             </tr>
                         </thead>
@@ -331,7 +331,7 @@
 
 </div>
 
-<!-- JavaScript for Sidebar Toggle -->
+
 <script>
     document.getElementById("profileBtn").addEventListener("click", function () {
         let sidebar = document.getElementById("sidebar");
@@ -342,7 +342,7 @@
         document.getElementById("sidebar").classList.add("translate-x-full"); // Close when "X" is clicked
     });
 
-    // JavaScript for BMI Calculation
+    
     document.getElementById("calculateBMI").addEventListener("click", function () {
         let weight = parseFloat(document.getElementById("weight").value);
         let height = parseFloat(document.getElementById("height").value) / 100; // Convert height to meters
@@ -351,7 +351,7 @@
             let bmi = weight / (height * height);
             let resultText = `Your BMI is: ${bmi.toFixed(2)}`;
 
-            // Provide feedback on BMI category
+            
             if (bmi < 18.5) {
                 resultText += " (Underweight)";
             } else if (bmi >= 18.5 && bmi <= 24.9) {
@@ -360,7 +360,7 @@
                 resultText += " (Overweight)";
             } else {
                 resultText += " (Obesity)";
-            }
+            }s
 
             document.getElementById("bmiResult").innerText = resultText;
         } else {

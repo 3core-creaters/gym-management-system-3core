@@ -9,13 +9,8 @@ class Member extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'gym_id',
-        'first_name',
-        'age',
-        'contact',
-        'membership_status',
-    ];
+    protected $fillable = ['user_id', 'gym_id', 'first_name', 'age', 'contact', 'membership_status'];
+
 
     public function user()
 {

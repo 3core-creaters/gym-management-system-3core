@@ -31,9 +31,9 @@
             <h2 class="text-2xl font-bold mb-4">User Profile</h2>
             <p>Name: {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</p>
         <p>Email: {{ Auth::user()->email }}</p>
-        <p>Gym ID: 
-            @if(Auth::user()->is_role == 0 && Auth::user()->member)
-                {{ Auth::user()->member->gym_id }}
+        <p>Gym ID: TRN
+            @if(Auth::user()->is_role == 1 && Auth::user()->trainer)
+                {{ Auth::user()->trainer->trainer_id }}
             @else
                 N/A
             @endif
@@ -125,22 +125,21 @@
         </div>
 
         <div class="overflow-x-auto py-6">
-            <h1 class="text-center text-3xl font-bold mb-10">See Our All Members</h1>
-    
-
-            <div class="flex justify-center">
-                    <table class="w-2xl m-25 mt-0 mb-10 bg-black text-white rounded-lg shadow-lg">
-                <thead>
-                    <tr class="border-b-2 border-red-600">
-                        <th class="px-4 py-2 text-center font-bold">Gym ID</th>
-                        <th class="px-4 py-2 text-center font-bold">First Name</th>
-                        <th class="px-4 py-2 text-center font-bold">Action</th>
-                    </tr>
-                </thead>
-                <tbody id="membersTable">
+                <h1 class="text-center text-3xl font-bold mb-10">See Our All Members</h1>
+        
+                <div class="flex justify-center">
+                            <table class="w-2xl m-25 mt-0 mb-10 bg-black text-white rounded-lg shadow-lg">
+                        <thead>
+                            <tr class="border-b-2 border-red-600">
+                                <th class="px-4 py-2 text-center font-bold">Gym ID</th>
+                                <th class="px-4 py-2 text-center font-bold">First Name</th>
+                                <th class="px-4 py-2 text-center font-bold">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="membersTable">
                             @foreach ($members as $member)
                                 <tr class="border-b border-red-600">
-                                    <td class="px-4 py-2 text-center">{{ $member->member_id }}</td>
+                                    <td class="px-4 py-2 text-center">{{ $member->gym_id }}</td>
                                     <td class="px-4 py-2 text-center">{{ $member->first_name }} {{ $member->last_name }}</td>
                                     <td class="px-4 py-2 text-center">
                                         <button class="view-profile-btn text-red-500 font-bold" data-id="{{ $member->member_id }}">View Profile</button>
@@ -155,10 +154,9 @@
                                 </tr>
                             @endforeach
                         </tbody>
-            </table>
+                    </table>
             </div>
 
-        </div>
 
 <script>
     document.querySelectorAll('.view-profile-btn').forEach(button => {
